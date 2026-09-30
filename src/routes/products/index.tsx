@@ -7,6 +7,9 @@ import fittingsImage from "../../assets/buttweld-fittings.jpg";
 import valvesImage from "../../assets/valves.avif";
 import fastenersImage from "../../assets/fasteners.avif";
 import gasketsImage from "../../assets/gaskets.avif";
+import groovedImage from "../../assets/grooved-fittings.jpg";
+import gratingImage from "../../assets/hdgi-gratings.jpg";
+import steelImage from "../../assets/structural-steel.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
 const title = "Industrial Pipes, Flanges, Fittings & Valves Supplier | Hiren Pipes";
@@ -76,14 +79,30 @@ const allProducts = [
     desc: "Spiral wound gaskets, RTJ ring joint gaskets, Kammprofile, heat exchanger, double jacketed, insulating kit gaskets, monolithic insulation joints. All filler materials.",
     standards: ["ANSI B16.20 standard", "RF & FF type flanges", "PTFE / Graphite / Asbestos / Ceramic"],
   },
-  // {
-  //   title: "Structural Steel & Gratings",
-  //   image: null,
-  //   href: "/products/structural-steel",
-  //   tag: "MS / CS / SS / FRP",
-  //   desc: "Plates, sheets, coils, bars (round/flat/hex/square), angles, channels, beams. Electroforged & manual gratings, stair treads, walkway gratings, ladders, handrails.",
-  //   standards: ["Mild Steel / Carbon Steel / SS", "Hot Rolled / Cold Rolled", "Hot Dip Galvanized finish available"],
-  // },
+  {
+    title: "Grooved Fittings",
+    image: groovedImage,
+    href: "/products/grooved-fittings",
+    tag: "FM & UL Approved · 300 PSI",
+    desc: "Ductile iron grooved fittings — 90° elbows, reducing elbows, 45° elbows, tees, crosses, rigid & flexible couplings, mechanical tees & outlets, concentric & eccentric reducers, caps, flange adaptors and split flanges.",
+    standards: ["ASTM A536 Grade 65-45-12", "FM & UL Approved", "Epoxy / Galvanized / Dacromet"],
+  },
+  {
+    title: "HDGI Gratings",
+    image: gratingImage,
+    href: "/products/hdgi-gratings",
+    tag: "Hot Dip Galvanized",
+    desc: "High quality Hot Dip Galvanized Iron (HDGI) gratings for industrial and construction applications. Walkways, platforms, drain covers, trench covers, industrial flooring, stair treads. Custom sizes available.",
+    standards: ["Bearing Bar: 20mm–50mm", "Cross Bar: 6mm–12mm", "Hot Dip Galvanized finish"],
+  },
+  {
+    title: "Structural Steel",
+    image: steelImage,
+    href: "/products/structural-steel",
+    tag: "Complete Steel Solutions",
+    desc: "MS Angle, Channel, I-Beam, H-Beam, Flat, Round, Square bars, Bright Bar, Wire Rod, GC Sheet, Profile Sheet, Deck Sheet, Scaffolding, Weld Mesh, Chainlink, Foundation Bolt, Crash Barrier and more.",
+    standards: ["IS:2062 / ASTM A36", "30+ Product Types", "Galvanizing & Fabrication"],
+  },
 ];
 
 function ProductCard({ p }: { p: typeof allProducts[0] }) {

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { Mail, MapPin, Menu, Phone, X, Instagram, Facebook } from "lucide-react";
+import { Mail, MapPin, Menu, Phone, X, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 
@@ -7,7 +7,6 @@ const navLinks: { label: string; href: string }[] = [
   { label: "Products", href: "/products" },
   { label: "Quality", href: "/quality" },
   { label: "Clients", href: "/clients" },
-  { label: "Industries", href: "/#industries" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -19,6 +18,8 @@ const footerProductLinks: { lbl: string; href: string }[] = [
   { lbl: "Valves", href: "/products/valves" },
   { lbl: "Fasteners & Studs", href: "/products/fasteners" },
   { lbl: "Gaskets & Sealing", href: "/products/gaskets" },
+  { lbl: "Grooved Fittings", href: "/products/grooved-fittings" },
+  { lbl: "HDGI Gratings", href: "/products/hdgi-gratings" },
   { lbl: "Structural Steel", href: "/products/structural-steel" },
 ];
 
@@ -45,9 +46,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur-lg shadow-sm">
-        <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:px-6">
+        <div className="mx-auto grid h-28 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:px-6">
           <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Hiren Pipes and Fittings home">
-            <img src="/logo.png" alt="Hiren Pipes &amp; Fittings" className="h-23 w-auto shrink-0 object-contain py-2" />
+            <img src="/logo.png" alt="Hiren Pipes &amp; Fittings" className="h-24 w-auto shrink-0 object-contain" />
             <div className="min-w-0 leading-none">
 
             </div>
@@ -98,7 +99,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <footer className="bg-ink py-14 text-primary-foreground/65">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-4">
           <div className="md:col-span-1">
-            <img src="/logo.png" alt="Hiren Pipes &amp; Fittings logo" loading="lazy" className="h-16 w-auto bg-background object-contain p-1" />
+            <img src="/logo.png" alt="Hiren Pipes &amp; Fittings logo" loading="lazy" className="h-14 w-auto bg-background object-contain p-1 rounded" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               Total Piping Solution Company. Manufacturer, exporter, stockist and supplier since 1990.
             </p>
@@ -148,6 +149,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </span>
           </div>
           <div className="flex items-center gap-5">
+            <a href="https://www.linkedin.com/in/hiren-r-shah-4792521b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#0A66C2]">
+              <Linkedin size={20} />
+            </a>
             <a href="https://www.instagram.com/metal.hiren?igsh=Z21iYm0xNTBxeDVo" target="_blank" rel="noreferrer" aria-label="Instagram" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#E1306C]">
               <Instagram size={20} />
             </a>

@@ -18,6 +18,8 @@ import { Route as ProductsIndexRouteImport } from './routes/products/index'
 import { Route as ProductsFastenersRouteImport } from './routes/products/fasteners'
 import { Route as ProductsFlangesRouteImport } from './routes/products/flanges'
 import { Route as ProductsGasketsRouteImport } from './routes/products/gaskets'
+import { Route as ProductsGroovedFittingsRouteImport } from './routes/products/grooved-fittings'
+import { Route as ProductsHdgiGratingsRouteImport } from './routes/products/hdgi-gratings'
 import { Route as ProductsPipeFittingsRouteImport } from './routes/products/pipe-fittings'
 import { Route as ProductsPipesTubesRouteImport } from './routes/products/pipes-tubes'
 import { Route as ProductsStructuralSteelRouteImport } from './routes/products/structural-steel'
@@ -68,6 +70,16 @@ const ProductsGasketsRoute = ProductsGasketsRouteImport.update({
   path: '/products/gaskets',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsGroovedFittingsRoute = ProductsGroovedFittingsRouteImport.update({
+  id: '/products/grooved-fittings',
+  path: '/products/grooved-fittings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsHdgiGratingsRoute = ProductsHdgiGratingsRouteImport.update({
+  id: '/products/hdgi-gratings',
+  path: '/products/hdgi-gratings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsPipeFittingsRoute = ProductsPipeFittingsRouteImport.update({
   id: '/products/pipe-fittings',
   path: '/products/pipe-fittings',
@@ -98,6 +110,8 @@ export interface FileRoutesByFullPath {
   '/products/fasteners': typeof ProductsFastenersRoute
   '/products/flanges': typeof ProductsFlangesRoute
   '/products/gaskets': typeof ProductsGasketsRoute
+  '/products/grooved-fittings': typeof ProductsGroovedFittingsRoute
+  '/products/hdgi-gratings': typeof ProductsHdgiGratingsRoute
   '/products/pipe-fittings': typeof ProductsPipeFittingsRoute
   '/products/pipes-tubes': typeof ProductsPipesTubesRoute
   '/products/structural-steel': typeof ProductsStructuralSteelRoute
@@ -113,6 +127,8 @@ export interface FileRoutesByTo {
   '/products/fasteners': typeof ProductsFastenersRoute
   '/products/flanges': typeof ProductsFlangesRoute
   '/products/gaskets': typeof ProductsGasketsRoute
+  '/products/grooved-fittings': typeof ProductsGroovedFittingsRoute
+  '/products/hdgi-gratings': typeof ProductsHdgiGratingsRoute
   '/products/pipe-fittings': typeof ProductsPipeFittingsRoute
   '/products/pipes-tubes': typeof ProductsPipesTubesRoute
   '/products/structural-steel': typeof ProductsStructuralSteelRoute
@@ -129,6 +145,8 @@ export interface FileRoutesById {
   '/products/fasteners': typeof ProductsFastenersRoute
   '/products/flanges': typeof ProductsFlangesRoute
   '/products/gaskets': typeof ProductsGasketsRoute
+  '/products/grooved-fittings': typeof ProductsGroovedFittingsRoute
+  '/products/hdgi-gratings': typeof ProductsHdgiGratingsRoute
   '/products/pipe-fittings': typeof ProductsPipeFittingsRoute
   '/products/pipes-tubes': typeof ProductsPipesTubesRoute
   '/products/structural-steel': typeof ProductsStructuralSteelRoute
@@ -146,6 +164,8 @@ export interface FileRouteTypes {
     | '/products/fasteners'
     | '/products/flanges'
     | '/products/gaskets'
+    | '/products/grooved-fittings'
+    | '/products/hdgi-gratings'
     | '/products/pipe-fittings'
     | '/products/pipes-tubes'
     | '/products/structural-steel'
@@ -161,6 +181,8 @@ export interface FileRouteTypes {
     | '/products/fasteners'
     | '/products/flanges'
     | '/products/gaskets'
+    | '/products/grooved-fittings'
+    | '/products/hdgi-gratings'
     | '/products/pipe-fittings'
     | '/products/pipes-tubes'
     | '/products/structural-steel'
@@ -176,6 +198,8 @@ export interface FileRouteTypes {
     | '/products/fasteners'
     | '/products/flanges'
     | '/products/gaskets'
+    | '/products/grooved-fittings'
+    | '/products/hdgi-gratings'
     | '/products/pipe-fittings'
     | '/products/pipes-tubes'
     | '/products/structural-steel'
@@ -192,6 +216,8 @@ export interface RootRouteChildren {
   ProductsFastenersRoute: typeof ProductsFastenersRoute
   ProductsFlangesRoute: typeof ProductsFlangesRoute
   ProductsGasketsRoute: typeof ProductsGasketsRoute
+  ProductsGroovedFittingsRoute: typeof ProductsGroovedFittingsRoute
+  ProductsHdgiGratingsRoute: typeof ProductsHdgiGratingsRoute
   ProductsPipeFittingsRoute: typeof ProductsPipeFittingsRoute
   ProductsPipesTubesRoute: typeof ProductsPipesTubesRoute
   ProductsStructuralSteelRoute: typeof ProductsStructuralSteelRoute
@@ -264,6 +290,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsGasketsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/grooved-fittings': {
+      id: '/products/grooved-fittings'
+      path: '/products/grooved-fittings'
+      fullPath: '/products/grooved-fittings'
+      preLoaderRoute: typeof ProductsGroovedFittingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/hdgi-gratings': {
+      id: '/products/hdgi-gratings'
+      path: '/products/hdgi-gratings'
+      fullPath: '/products/hdgi-gratings'
+      preLoaderRoute: typeof ProductsHdgiGratingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/pipe-fittings': {
       id: '/products/pipe-fittings'
       path: '/products/pipe-fittings'
@@ -304,6 +344,8 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsFastenersRoute: ProductsFastenersRoute,
   ProductsFlangesRoute: ProductsFlangesRoute,
   ProductsGasketsRoute: ProductsGasketsRoute,
+  ProductsGroovedFittingsRoute: ProductsGroovedFittingsRoute,
+  ProductsHdgiGratingsRoute: ProductsHdgiGratingsRoute,
   ProductsPipeFittingsRoute: ProductsPipeFittingsRoute,
   ProductsPipesTubesRoute: ProductsPipesTubesRoute,
   ProductsStructuralSteelRoute: ProductsStructuralSteelRoute,

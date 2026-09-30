@@ -7,6 +7,7 @@ import office2 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.4
 import office3 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.45 PM (2).jpeg";
 import office4 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.46 PM.jpeg";
 import office5 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.45 PM (3).jpeg";
+import directorImg from "../assets/hiren-shah.jpg";
 
 import { useState } from "react";
 
@@ -128,6 +129,35 @@ function AboutPage() {
                   <img src={img.src} alt={img.alt} loading="lazy" className="aspect-square w-full object-cover" width="150" height="150" />
                 </button>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="grid gap-10 md:grid-cols-5 items-center rounded-2xl border border-black/5 bg-white/70 shadow-xl backdrop-blur-lg overflow-hidden">
+            <div className="md:col-span-2 h-full">
+              <img src={directorImg} alt="Mr. Hiren R. Shah - Director" className="h-full w-full object-cover aspect-square md:aspect-auto" />
+            </div>
+            <div className="md:col-span-3 p-8 md:p-12">
+              <p className="text-xs font-bold uppercase text-brand-light">Leadership</p>
+              <h2 className="mt-2 text-3xl font-extrabold text-brand-deep">Mr. Hiren R. Shah</h2>
+              <p className="mt-1 text-sm font-semibold text-steel uppercase tracking-wider">Director</p>
+              
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-steel">
+                <p>
+                  Leading Hiren Pipes & Fittings into the future, Mr. Hiren R. Shah brings dynamic vision and deep industry expertise to the piping sector. Under his leadership, the company has expanded its portfolio and strengthened its commitment to providing comprehensive Total Piping Solutions to a global clientele.
+                </p>
+                <p>
+                  With a focus on innovation, timely delivery, and unwavering quality standards, he continues to build upon a three-decade legacy, ensuring that Hiren Pipes & Fittings remains a trusted partner for critical industrial and infrastructure projects.
+                </p>
+              </div>
+              
+              <a href="https://www.linkedin.com/in/hiren-r-shah-4792521b" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#0A66C2] hover:text-brand-deep transition-colors">
+                Connect on LinkedIn <ArrowRight size={16} />
+              </a>
             </div>
           </div>
         </div>

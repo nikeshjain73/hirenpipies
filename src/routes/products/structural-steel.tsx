@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { SiteLayout } from "../../components/SiteLayout";
+import steelImage from "../../assets/structural-steel.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
-const title = "Structural Steel & Metal Gratings Supplier India | Hiren Pipes & Fittings";
+const title = "Structural Steel & Steel Solutions Supplier India | Hiren Pipes & Fittings";
 const description =
-  "Stockist & supplier of structural steel — plates, sheets, coils, round/flat/hex/square bars, angles, channels, beams, square & rectangular pipes. Electroforged & manual gratings, stair treads, walkways, handrails, ladders. MS, CS, SS, FRP. Ankleshwar, Gujarat.";
+  "Complete range of structural steel products — MS Angle, Channel, I-Beam, H-Beam, Flat, Round, Square bars, Bright Bar, Wire Rod, GC Sheet, Profile Sheet, Deck Sheet, Scaffolding, Weld Mesh, Chainlink, Barbed Wire, Foundation Bolt, Crash Barrier, Thread Rods. Manufacturer, stockist, supplier from Ankleshwar, Gujarat.";
 
 export const Route = createFileRoute("/products/structural-steel")({
   head: () => ({
@@ -21,126 +22,169 @@ export const Route = createFileRoute("/products/structural-steel")({
   component: StructuralSteelPage,
 });
 
-const steelProducts = [
-  { cat: "Plates / Sheets / Coils", items: ["HR (Hot Rolled) Plates & Sheets", "CR (Cold Rolled) Sheets & Coils", "Chequered / Tear Drop Plates", "Stainless Steel Sheets (2B, BA, Mirror, Matt finish)", "Aluminium Sheets & Coils", "GI (Galvanized) Sheets & Coils"] },
-  { cat: "Bars", items: ["Round Bars (MS, CS, SS, Alloy Steel)", "Flat Bars", "Hex Bars", "Square Bars", "TMT / CTD Bars", "Bright Bars"] },
-  { cat: "Structural Sections", items: ["Angles (Equal & Unequal leg)", "Channels (ISMC, ISSC)", "Beams (ISMB, ISWB, ISHB)", "Joist Sections", "T-Sections", "Z-Sections"] },
-  { cat: "Pipes (Structural)", items: ["Square Hollow Section (SHS)", "Rectangular Hollow Section (RHS)", "Circular Hollow Section (CHS)", "ERW Square & Rectangular Tubes", "Scaffolding Pipes"] },
+/* ─── Structural Sections ─── */
+const structuralSections = [
+  { name: "MS Angle", tagline: "For Stronger Structures", desc: "Mild Steel angles in equal and unequal leg configurations. Used extensively in construction, fabrication, and industrial frameworks. Available in all standard IS sizes." },
+  { name: "MS Channel", tagline: "Built for Stability", desc: "ISMC and ISSC channels for structural support, frames, brackets and general fabrication. Hot rolled, standard and custom lengths." },
+  { name: "MS I-Beam", tagline: "High Load Capacity", desc: "ISMB standard I-beams for building construction, bridges, and heavy structural applications. Superior strength-to-weight ratio." },
+  { name: "MS H-Beam", tagline: "Superior Strength", desc: "ISHB and wide flange H-beams for heavy-duty columns, pile foundations, and long-span structures. Built for the long run." },
+  { name: "Gate Channel", tagline: "For Strong Structures", desc: "Specialized channel sections for gate frames, door frames, and window frames. Clean profile for architectural applications." },
+  { name: "Z Angle", tagline: "Structural Support", desc: "Z-section purlins and girts for pre-engineered building roofing and wall cladding support. Lightweight yet strong." },
+  { name: "T Angle", tagline: "Versatile & Strong", desc: "T-section structural steel for joints, connections, and support brackets in fabrication and construction." },
 ];
 
-const gratingSpecs = [
-  { spec: "Type", val: "Electroforged (plain/serrated) and Manual" },
-  { spec: "Bearing Bar Size", val: "25×3, 25×5, 25×6, 30×3, 30×5, 30×6, 40×5, 40×6, 50×6, 75×8, 75×10mm" },
-  { spec: "Cross Bar", val: "6, 8, 10mm square twisted bar; 8, 10, 12mm TMT round; flat bar 12×3 to 40×6mm" },
-  { spec: "Frame Bar", val: "25×5 to 75×10mm flat bars (same range as bearing bars)" },
-  { spec: "Panel Size", val: "Standard: 1m × 1m (manual); 1m × 6m (electroforged); custom sizes available" },
-  { spec: "Finish", val: "Hot Dip Galvanized (HDG), Red Oxide primed, Painted, Black (bare) condition" },
-  { spec: "Materials", val: "Mild Steel (MS), Carbon Steel (CS), Stainless Steel (SS 304/316), FRP" },
+/* ─── Bars & Rods ─── */
+const barsAndRods = [
+  { name: "MS Square", tagline: "Precision & Strength", desc: "Mild Steel square bars in various sizes for grills, gates, frames, and general fabrication. Hot rolled and cold drawn available." },
+  { name: "MS Round", tagline: "For Every Application", desc: "MS round bars for shafts, pins, rollers, and general engineering. Available in hot rolled and bright finish." },
+  { name: "MS Flat", tagline: "Strong & Reliable", desc: "Flat bars in mild steel for fabrication, brackets, supports, and structural connections. Wide range of widths and thicknesses." },
+  { name: "Bright Bar", tagline: "Smooth Finish · High Quality", desc: "Cold drawn bright steel bars with tight tolerances and superior surface finish. Used for precision components and machining." },
+  { name: "MS Wire Rod", tagline: "Flexible & Strong", desc: "Wire rods in coil form for drawing into wire, nails, mesh, and other wire products. SAE 1008/1010 grades." },
+  { name: "Thread Rods", tagline: "Strong Ties · Lasting Results", desc: "Fully threaded rods (studs) in MS and high tensile grades for anchoring, clamping, and structural connections." },
 ];
 
-const gratingApplications = [
-  "Oil & Gas platforms", "Marine & Ship decks", "Power plant walkways", "Wastewater treatment plants",
-  "Stair treads", "Bridge walkways", "Industrial flooring", "Tank landings",
-  "Trench gratings", "Drain covers", "Access platforms", "Mezzanine floors",
+/* ─── Plates & Sheets ─── */
+const platesAndSheets = [
+  { name: "MS Plate", tagline: "Heavy Duty Performance", desc: "Mild Steel plates in various thicknesses for structural, fabrication, pressure vessel, and shipbuilding applications. IS:2062 / ASTM A36." },
+  { name: "GC Sheet", tagline: "Weather Resistant", desc: "Galvanized Corrugated sheets for roofing and cladding. Corrosion resistant with zinc coating. Available in various profiles and gauges." },
+  { name: "Deck Sheet", tagline: "Modern Building Solutions", desc: "Steel deck sheets / floor decking for composite slab construction. Trapezoidal profile for maximum strength. Galvanized finish." },
+  { name: "Profile Sheet", tagline: "Durable & Aesthetic", desc: "Color coated and galvanized profile sheets for roofing, wall cladding, and partitions. Multiple rib patterns and color options available." },
+  { name: "Cut Piece Plate", tagline: "As Per Your Requirement", desc: "Custom cut MS plates to exact size requirements. Gas cutting, plasma cutting, and shearing available for precise dimensions." },
 ];
 
-const handralingItems = [
-  "Handrail pipes (MS, GI, SS)", "Pipe fittings for handrailing (elbows, tees, flanges)",
-  "Toe guard flat bars", "Kick plates / Flat guard",
-  "Ladders & ladder rungs", "Safety cages for vertical ladders",
-  "Access platforms", "Stair stringers",
+/* ─── Wire Products ─── */
+const wireProducts = [
+  { name: "Binding Wire", tagline: "Secure Connections", desc: "Annealed mild steel binding wire for tying reinforcement bars in RCC construction. Available in 18, 20, 22 gauge." },
+  { name: "Barbed Wire", tagline: "Protection Redefined", desc: "Galvanized barbed wire for fencing and perimeter security. Single and double strand available. Zinc coated for long life." },
+  { name: "GI Wire", tagline: "Corrosion Resistant", desc: "Galvanized Iron wire for fencing, binding, stay wires, and general purpose use. Various gauges available." },
+  { name: "HB Wire", tagline: "For Multiple Uses", desc: "High carbon hard bright wire for springs, mattress manufacturing, and industrial applications. Smooth surface finish." },
+  { name: "Weld Mesh", tagline: "Stronger Together", desc: "Welded wire mesh panels for concrete reinforcement, fencing, partitions, and cages. Galvanized and plain options." },
+  { name: "Chainlink", tagline: "Safety & Security", desc: "Galvanized and PVC coated chainlink fencing for boundary walls, sports grounds, gardens, and industrial perimeters." },
 ];
 
-const surfaceFinishes = [
-  { finish: "2B (Mill finish)", mat: "Stainless steel sheets — smooth, cold-rolled" },
-  { finish: "BA (Bright Annealed)", mat: "Mirror-like reflective finish for SS sheets" },
-  { finish: "Matt / No.4 Brushed", mat: "Directional brushed finish for SS sheets" },
-  { finish: "Mirror / Silver", mat: "Highly polished decorative SS finish" },
-  { finish: "HR (Hot Rolled)", mat: "MS/CS plates and sections, scale surface" },
-  { finish: "CR (Cold Rolled)", mat: "Smooth, tight-tolerance MS/CS sheets" },
-  { finish: "Coloured / PVC coated", mat: "Pre-painted galvanized steel sheets" },
+/* ─── Construction Accessories ─── */
+const constructionAccessories = [
+  { name: "Scaffolding", tagline: "Safety in Every Height", desc: "MS scaffolding pipes, couplers, base plates, and accessories for temporary construction structures. Cup-lock and H-frame systems." },
+  { name: "Foundation Bolt", tagline: "Secure Your Base", desc: "Foundation bolts (J-bolts, L-bolts, straight anchor bolts) for securing structures, machinery, and equipment to concrete bases." },
+  { name: "Crash Barrier", tagline: "Road Safety Solutions", desc: "W-beam and thrie-beam metal crash barriers for highway median and roadside safety. Hot dip galvanized for corrosion resistance." },
 ];
+
+/* ─── Services ─── */
+const services = [
+  { name: "Galvanizing & Fabrication Works", tagline: "Customised Solutions", desc: "Hot dip galvanizing services for all steel products. Custom fabrication — cutting, bending, drilling, welding per your drawings and specifications." },
+];
+
+function ProductGrid({ title, subtitle, items }: { title: string; subtitle?: string; items: { name: string; tagline: string; desc: string }[] }) {
+  return (
+    <section>
+      <h2 className="mb-1 text-2xl font-extrabold text-brand-deep">{title}</h2>
+      {subtitle && <p className="mb-6 text-sm text-steel">{subtitle}</p>}
+      {!subtitle && <div className="mb-6" />}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((t) => (
+          <div key={t.name} className="border border-border p-5 transition-colors hover:border-brand-light hover:bg-brand-deep/[0.02]">
+            <h3 className="text-sm font-extrabold text-brand-deep">{t.name}</h3>
+            <p className="mt-1 text-[11px] font-semibold uppercase text-brand-light">{t.tagline}</p>
+            <p className="mt-2 text-xs leading-relaxed text-steel">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function StructuralSteelPage() {
   return (
     <SiteLayout>
-      <div className="bg-brand-deep py-20 text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      {/* Hero */}
+      <div className="relative bg-ink py-20 text-primary-foreground">
+        <img
+          src={steelImage}
+          alt="Structural steel stockyard — angles, channels, beams, bars, sheets — Hiren Pipes & Fittings"
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          width="1920"
+          height="600"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-primary-foreground">Home</Link>
             <span className="mx-2">/</span>
             <Link to="/products" className="hover:text-primary-foreground">Products</Link>
             <span className="mx-2">/</span>
-            <span>Structural Steel & Gratings</span>
+            <span>Structural Steel</span>
           </nav>
-          <p className="mb-3 text-xs font-bold uppercase text-brand-pale">MS · CS · SS · Non-Ferrous · FRP</p>
-          <h1 className="text-4xl font-extrabold sm:text-5xl">Structural Steel & Metal Gratings</h1>
+          <p className="mb-3 text-xs font-bold uppercase text-brand-pale">MS · CS · SS · Complete Steel Solutions</p>
+          <h1 className="text-4xl font-extrabold sm:text-5xl">Steel Solutions</h1>
+          <p className="mt-2 text-lg font-bold text-brand-pale">A complete range for every construction & industrial requirement.</p>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
-            Complete range of structural steel — plates, bars, angles, channels, beams and hollow sections. Electroforged and manual gratings, handrails, platforms and access ladders in MS, CS, SS and FRP.
+            Structural sections, bars, plates, sheets, wire products, scaffolding, fencing, and custom fabrication — a one-stop steel solution for construction, industrial, and infrastructure projects.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 space-y-14">
-        {/* Steel products */}
-        <section>
-          <h2 className="mb-8 text-2xl font-extrabold text-brand-deep">Structural Steel Products</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {steelProducts.map((s) => (
-              <div key={s.cat} className="rounded-xl border border-black/5 bg-white/70 p-5 shadow-sm backdrop-blur-lg transition-shadow hover:shadow-md">
-                <h3 className="text-sm font-extrabold uppercase text-brand-deep">{s.cat}</h3>
-                <ul className="mt-3 space-y-1">
-                  {s.items.map((item) => (
-                    <li key={item} className="text-xs text-steel">• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <h3 className="mb-4 text-lg font-extrabold text-brand-deep">Surface Finishes Available</h3>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {surfaceFinishes.map((f) => (
-                <div key={f.finish} className="border-l-2 border-brand-light bg-steel-light p-3">
-                  <p className="text-xs font-bold text-brand-deep">{f.finish}</p>
-                  <p className="mt-0.5 text-[11px] text-steel">{f.mat}</p>
+      {/* Key Highlights */}
+      <div className="bg-white py-10 border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              ["Superior Quality", "Sourced from reputed mills — Tata, SAIL, JSW, Jindal"],
+              ["Wide Range", "30+ product types under one roof"],
+              ["On-Time Supply", "Strategic location for fast India-wide dispatch"],
+              ["Trusted Partner", "Serving construction & industrial clients since 1990"],
+            ].map(([t, d]) => (
+              <div key={t} className="flex gap-3">
+                <CheckCircle size={18} className="mt-0.5 shrink-0 text-brand-light" />
+                <div>
+                  <p className="text-sm font-bold text-brand-deep">{t}</p>
+                  <p className="mt-1 text-xs text-steel">{d}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Gratings */}
-        <section>
-          <h2 className="mb-3 text-2xl font-extrabold text-brand-deep">Metal Gratings</h2>
-          <p className="mb-6 text-sm text-steel">Electroforged (welded) and manual (hand-assembled) gratings manufactured to standard and custom dimensions.</p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {gratingSpecs.map((s) => (
-              <div key={s.spec} className="flex gap-4 border-b border-border pb-4">
-                <span className="w-40 shrink-0 text-xs font-bold uppercase text-brand-deep">{s.spec}</span>
-                <span className="text-xs text-steel">{s.val}</span>
               </div>
             ))}
           </div>
-          <div className="mt-8">
-            <h3 className="mb-4 text-base font-bold uppercase text-brand-deep">Grating Applications</h3>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-              {gratingApplications.map((a) => (
-                <div key={a} className="border border-border px-3 py-2 text-xs text-steel">• {a}</div>
-              ))}
-            </div>
-          </div>
-        </section>
+        </div>
+      </div>
 
-        {/* Handrailing */}
-        <section>
-          <h2 className="mb-6 text-2xl font-extrabold text-brand-deep">Handrailing, Ladders & Platforms</h2>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {handralingItems.map((h) => (
-              <div key={h} className="border-l-2 border-brand-light pl-3 py-1 text-xs text-steel">{h}</div>
-            ))}
-          </div>
-        </section>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 space-y-14">
+        {/* Structural Sections */}
+        <ProductGrid
+          title="Structural Sections"
+          subtitle="Angles, Channels, Beams & Specialized Sections — IS:2062 / IS:808 / IS:1161 standards"
+          items={structuralSections}
+        />
+
+        {/* Bars & Rods */}
+        <ProductGrid
+          title="Bars & Rods"
+          subtitle="Round, Square, Flat, Bright, Wire Rod & Threaded — all grades and sizes available"
+          items={barsAndRods}
+        />
+
+        {/* Plates & Sheets */}
+        <ProductGrid
+          title="Plates & Sheets"
+          subtitle="MS Plates, GC Sheets, Deck Sheets, Profile Sheets & Cut-to-Size Plates"
+          items={platesAndSheets}
+        />
+
+        {/* Wire Products */}
+        <ProductGrid
+          title="Wire Products & Fencing"
+          subtitle="Binding Wire, Barbed Wire, GI Wire, Weld Mesh, Chainlink & Industrial Wire"
+          items={wireProducts}
+        />
+
+        {/* Construction Accessories */}
+        <ProductGrid
+          title="Construction Accessories"
+          subtitle="Scaffolding, Foundation Bolts & Safety Barriers"
+          items={constructionAccessories}
+        />
+
+        {/* Services */}
+        <ProductGrid
+          title="Galvanizing & Fabrication Services"
+          items={services}
+        />
       </div>
 
       {/* Related */}
@@ -152,7 +196,8 @@ function StructuralSteelPage() {
               ["Pipes & Tubes", "/products/pipes-tubes"],
               ["Flanges", "/products/flanges"],
               ["Fasteners & Studs", "/products/fasteners"],
-              ["Gaskets & Sealing", "/products/gaskets"],
+              ["HDGI Gratings", "/products/hdgi-gratings"],
+              ["Grooved Fittings", "/products/grooved-fittings"],
             ].map(([n, h]) => (
               <Link key={h} to={h as string} className="inline-flex items-center gap-2 border border-brand-deep px-4 py-2 text-xs font-bold uppercase text-brand-deep hover:bg-brand-deep hover:text-primary-foreground">
                 {n} <ArrowRight size={12} />
@@ -162,9 +207,11 @@ function StructuralSteelPage() {
         </div>
       </div>
 
+      {/* CTA */}
       <div className="bg-brand-deep py-12 text-primary-foreground">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <h2 className="text-2xl font-extrabold">Request structural steel & grating pricing</h2>
+          <h2 className="text-2xl font-extrabold">Stronger Infrastructure for a Brighter Tomorrow.</h2>
+          <p className="mt-2 text-sm text-primary-foreground/70">Specify product, size, grade and quantity — we'll quote within 24 hours.</p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="https://wa.me/919586911478" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-light px-6 py-3 text-xs font-bold uppercase hover:bg-brand">
               <Phone size={16} /> +91 95869 11478
@@ -178,5 +225,3 @@ function StructuralSteelPage() {
     </SiteLayout>
   );
 }
-
-
