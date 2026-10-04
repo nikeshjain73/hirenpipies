@@ -173,10 +173,9 @@ function PipesTubesPage() {
           <h2 className="mb-6 text-xl font-extrabold text-brand-deep">Brands We Stock</h2>
           <div className="flex flex-wrap gap-2">
             {[
-              "SAIL", "Jindal", "MSL (Maharashtra Seamless)", "JSL (Jindal Stainless)",
-              "Apollo", "Asian", "Suryaprakash", "AM/NS India", "Tata Steel",
-              "JSW Steel", "RINL / VIZAG Steel", "APL Apollo", "Ratnamani",
-              "ISMT", "Kirloskar Ferrous", "Surya Roshni", "Jindal Stainless Hisar (JSHL)",
+              "Jindal", "MSL (Maharashtra Seamless)", "JSL (Jindal Saw Ltd)",
+              "Apollo", "Asian", "Suryaprakash", "Tata Steel", "ISMT",
+              "Kirloskar Ferrous", "Surya Roshni", "Jindal Stainless (JSL)",
               "Swastico Pipes & Tubes", "Venus Pipes & Tubes", "Ratnamani Metals & Tubes"
             ].map((brand) => (
               <span key={brand} className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm">

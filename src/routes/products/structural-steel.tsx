@@ -193,7 +193,7 @@ function StructuralSteelPage() {
           <div className="flex flex-wrap gap-2">
             {[
               "SAIL", "Tata Steel", "JSW", "AM/NS India",
-              "Jindal Steel & Power (JSPL)", "RINL", "APL Apollo"
+              "Jindal Steel & Power (JSPL)", "RINL", "VIZAG", "APL Apollo"
             ].map((brand) => (
               <span key={brand} className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm">
                 {brand}
