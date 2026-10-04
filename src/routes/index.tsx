@@ -112,12 +112,19 @@ const industries = [
 
 const brandCategories = [
   {
-    name: "Steel, Pipes & Tubes",
+    name: "Pipes & Tubes",
     brands: [
-      "SAIL", "Jindal", "MSL (Maharashtra Seamless)", "JSL (Jindal Stainless)",
-      "Apollo", "Asian", "Suryaprakash", "AM/NS India", "Tata Steel",
-      "JSW Steel", "RINL / VIZAG Steel", "APL Apollo", "Ratnamani",
-      "ISMT", "Kirloskar Ferrous", "Surya Roshni"
+      "Jindal", "MSL (Maharashtra Seamless)", "JSL (Jindal Saw Ltd)",
+      "Apollo", "Asian", "Suryaprakash", "Tata Steel", "ISMT",
+      "Kirloskar Ferrous", "Surya Roshni"
+    ]
+  },
+  {
+    name: "Fitting & Flange",
+    brands: [
+      "Hiren Metal & Tools", "Metal Tube & Fittings", "Sankalp Engineers",
+      "Alliance Engineering", "ACE Engineers", "CD Metal Industries",
+      "Lal Metal Forge", "Hindon Forge", "United Forge Industries"
     ]
   },
   {
@@ -128,17 +135,17 @@ const brandCategories = [
     ]
   },
   {
-    name: "Stainless Steel & Mills",
+    name: "Stainless Steel",
     brands: [
-      "Jindal Stainless (JSL)", "Jindal Stainless Hisar (JSHL)",
-      "Swastico Pipes & Tubes", "Venus Pipes & Tubes", "Ratnamani Metals & Tubes"
+      "Jindal Stainless (JSL)", "Swastico Pipes & Tubes", 
+      "Venus Pipes & Tubes", "Ratnamani Metals & Tubes"
     ]
   },
   {
     name: "Structural Steel & Plates",
     brands: [
       "SAIL", "Tata Steel", "JSW", "AM/NS India",
-      "Jindal Steel & Power (JSPL)", "RINL", "APL Apollo"
+      "Jindal Steel & Power (JSPL)", "RINL", "VIZAG", "APL Apollo"
     ]
   },
   {
