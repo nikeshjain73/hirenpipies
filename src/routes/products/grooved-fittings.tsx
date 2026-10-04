@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
-import { SiteLayout } from "../../components/SiteLayout";
 import groovedImage from "../../assets/grooved-fittings.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
@@ -117,7 +116,7 @@ function ProductGrid({ title, items }: { title: string; items: { name: string; d
 
 function GroovedFittingsPage() {
   return (
-    <SiteLayout>
+    <>
       {/* Hero */}
       <div className="relative bg-ink py-20 text-primary-foreground">
         <img
@@ -251,6 +250,7 @@ function GroovedFittingsPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

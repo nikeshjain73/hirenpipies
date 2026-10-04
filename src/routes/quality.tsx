@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
-import { SiteLayout } from "../components/SiteLayout";
 import inspectionImage from "../assets/quality-inspection.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
@@ -57,7 +56,7 @@ const materialRanges = [
 
 function QualityPage() {
   return (
-    <SiteLayout>
+    <>
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
@@ -149,6 +148,7 @@ function QualityPage() {
           </Link>
         </div>
       </section>
-    </SiteLayout>
+    </>
   );
 }
+

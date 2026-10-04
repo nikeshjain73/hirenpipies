@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { SiteLayout } from "../../components/SiteLayout";
 import pipesImage from "../../assets/carbon-steel-pipes.jpg";
 import flangesImage from "../../assets/forged-flanges.jpg";
 import fittingsImage from "../../assets/buttweld-fittings.jpg";
@@ -12,7 +11,7 @@ import gratingImage from "../../assets/hdgi-gratings.jpg";
 import steelImage from "../../assets/structural-steel.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
-const title = "Industrial Pipes, Flanges, Fittings & Valves Supplier | Hiren Pipes";
+const title = "Industrial Pipes, Flanges, Valves & Fittings | Hiren Pipes";
 const description =
   "Complete product catalogue — industrial pipes & tubes, flanges, pipe fittings, valves, fasteners, gaskets and structural steel. ASTM / ASME / API / IS standards. Manufacturer, exporter, stockist from Ankleshwar, Gujarat.";
 
@@ -26,6 +25,29 @@ export const Route = createFileRoute("/products/")({
       { property: "og:url", content: `${SITE_URL}/products` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/products` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": SITE_URL
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Products",
+              "item": `${SITE_URL}/products`
+            }
+          ]
+        })
+      }
+    ]
   }),
   component: ProductsPage,
 });
@@ -146,7 +168,7 @@ function ProductCard({ p }: { p: typeof allProducts[0] }) {
 
 function ProductsPage() {
   return (
-    <SiteLayout>
+    <>
       {/* Page header */}
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -188,6 +210,7 @@ function ProductsPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

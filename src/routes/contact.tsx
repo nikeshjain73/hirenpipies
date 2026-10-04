@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Loader2, Send, CheckCircle2 } from "lucide-react";
-import { SiteLayout } from "../components/SiteLayout";
 import { createServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
@@ -74,7 +73,7 @@ function ContactPage() {
   };
 
   return (
-    <SiteLayout>
+    <>
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
@@ -163,26 +162,26 @@ function ContactPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1">
                   <label htmlFor="name" className="text-xs font-bold uppercase text-brand-deep">Name *</label>
-                  <input type="text" id="name" name="name" required disabled={status === "submitting"} className="w-full border border-border p-3 text-sm focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your name" />
+                  <input type="text" id="name" name="name" required disabled={status === "submitting"} className="w-full border border-border p-3 text-base focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your name" />
                 </div>
                 <div className="space-y-1">
                   <label htmlFor="email" className="text-xs font-bold uppercase text-brand-deep">Email *</label>
-                  <input type="email" id="email" name="email" required disabled={status === "submitting"} className="w-full border border-border p-3 text-sm focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your email address" />
+                  <input type="email" id="email" name="email" required disabled={status === "submitting"} className="w-full border border-border p-3 text-base focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your email address" />
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1">
                   <label htmlFor="phone" className="text-xs font-bold uppercase text-brand-deep">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" disabled={status === "submitting"} className="w-full border border-border p-3 text-sm focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your phone number" />
+                  <input type="tel" id="phone" name="phone" disabled={status === "submitting"} className="w-full border border-border p-3 text-base focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your phone number" />
                 </div>
                 <div className="space-y-1">
                   <label htmlFor="company" className="text-xs font-bold uppercase text-brand-deep">Company</label>
-                  <input type="text" id="company" name="company" disabled={status === "submitting"} className="w-full border border-border p-3 text-sm focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your company name" />
+                  <input type="text" id="company" name="company" disabled={status === "submitting"} className="w-full border border-border p-3 text-base focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Your company name" />
                 </div>
               </div>
               <div className="space-y-1">
                 <label htmlFor="message" className="text-xs font-bold uppercase text-brand-deep">Requirement Details *</label>
-                <textarea id="message" name="message" required disabled={status === "submitting"} rows={5} className="w-full border border-border p-3 text-sm focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Please specify product type, material grade, size, quantity, etc."></textarea>
+                <textarea id="message" name="message" required disabled={status === "submitting"} rows={5} className="w-full border border-border p-3 text-base focus:border-brand-light focus:outline-none disabled:opacity-50" placeholder="Please specify product type, material grade, size, quantity, etc."></textarea>
               </div>
               
               {status === "error" && (
@@ -208,6 +207,7 @@ function ContactPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

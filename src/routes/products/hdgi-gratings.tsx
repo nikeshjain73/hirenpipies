@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail, CheckCircle, Shield } from "lucide-react";
-import { SiteLayout } from "../../components/SiteLayout";
 import gratingImage from "../../assets/hdgi-gratings.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
@@ -106,7 +105,7 @@ const materialSpecs = [
 
 function HdgiGratingsPage() {
   return (
-    <SiteLayout>
+    <>
       {/* Hero */}
       <div className="relative bg-ink py-20 text-primary-foreground">
         <img
@@ -255,6 +254,7 @@ function HdgiGratingsPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

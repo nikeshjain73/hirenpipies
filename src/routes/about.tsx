@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Phone, Mail, ArrowRight } from "lucide-react";
-import { SiteLayout } from "../components/SiteLayout";
 
 import office1 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.44 PM.jpeg";
 import office2 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.44 PM (1).jpeg";
@@ -26,6 +25,35 @@ export const Route = createFileRoute("/about")({
       { property: "og:url", content: `${SITE_URL}/about` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          mainEntity: {
+            "@type": "Organization",
+            name: "Hiren Pipes & Fittings",
+            alternateName: "Hiren Metal & Tools",
+            founder: {
+              "@type": "Person",
+              name: "Ramesh V. Shah"
+            },
+            employee: {
+              "@type": "Person",
+              name: "Hiren R. Shah",
+              jobTitle: "Director"
+            },
+            foundingDate: "1990",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+91-95869-11478",
+              contactType: "sales"
+            }
+          }
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });
@@ -52,7 +80,7 @@ const officeImages = [
 function AboutPage() {
   const [activeImg, setActiveImg] = useState(0);
   return (
-    <SiteLayout>
+    <>
       {/* Page header */}
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -212,6 +240,7 @@ function AboutPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

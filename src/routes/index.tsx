@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Download, Phone, Mail } from "lucide-react";
 
-import { SiteLayout } from "../components/SiteLayout";
 import heroImage from "../assets/hiren-pipes-refinery-hero.jpg";
 import pipesImage from "../assets/carbon-steel-pipes.jpg";
 import flangesImage from "../assets/forged-flanges.jpg";
@@ -9,9 +8,9 @@ import fittingsImage from "../assets/buttweld-fittings.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
-const title = "Industrial Pipes, Fittings & Flanges Supplier India | Hiren Pipes & Fittings";
+const title = "Pipes, Flanges & Fittings Supplier in Ankleshwar | Hiren Pipes";
 const description =
-  "Hiren Pipes & Fittings — Total Piping Solution Company. Manufacturer, exporter, stockist & supplier of industrial pipes, tubes, flanges, fittings, valves, fasteners from Ankleshwar, Gujarat, India. 36+ years of experience.";
+  "Manufacturer, exporter & stockist of industrial pipes, flanges, fittings, valves, grooved fittings and HDGI gratings from Ankleshwar, Gujarat. 36+ years, TPI support.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +36,12 @@ export const Route = createFileRoute("/")({
           "@type": "LocalBusiness",
           "@id": `${SITE_URL}/#business`,
           name: "Hiren Pipes & Fittings",
+          sameAs: [
+            "https://www.linkedin.com/in/hiren-r-shah-4792521b",
+            "https://www.instagram.com/metal.hiren",
+            "https://www.facebook.com/hirenmetal.in"
+          ],
+          taxID: "24DEXPS6269K1ZD",
           alternateName: "Hiren Metal & Tools",
           foundingDate: "1990",
           email: ["metal.hiren@gmail.com", "hiren_metal@yahoo.co.in"],
@@ -105,6 +110,52 @@ const industries = [
   "Water Treatment", "EPC Contractors",
 ];
 
+const brandCategories = [
+  {
+    name: "Steel, Pipes & Tubes",
+    brands: [
+      "SAIL", "Jindal", "MSL (Maharashtra Seamless)", "JSL (Jindal Stainless)",
+      "Apollo", "Asian", "Suryaprakash", "AM/NS India", "Tata Steel",
+      "JSW Steel", "RINL / VIZAG Steel", "APL Apollo", "Ratnamani",
+      "ISMT", "Kirloskar Ferrous", "Surya Roshni"
+    ]
+  },
+  {
+    name: "Fasteners",
+    brands: [
+      "Unbrako", "Sundram Fasteners", "TVS Fasteners", 
+      "Precision Fasteners", "Raj Fasteners"
+    ]
+  },
+  {
+    name: "Stainless Steel & Mills",
+    brands: [
+      "Jindal Stainless (JSL)", "Jindal Stainless Hisar (JSHL)",
+      "Swastico Pipes & Tubes", "Venus Pipes & Tubes", "Ratnamani Metals & Tubes"
+    ]
+  },
+  {
+    name: "Structural Steel & Plates",
+    brands: [
+      "SAIL", "Tata Steel", "JSW", "AM/NS India",
+      "Jindal Steel & Power (JSPL)", "RINL", "APL Apollo"
+    ]
+  },
+  {
+    name: "Valves & Industrial Products",
+    brands: [
+      "L&T Valves", "Audco", "Sant", "Leader Valves", "DRP",
+      "Hawa Valves", "Zoloto", "Marck Valves", "Aira Valves"
+    ]
+  },
+  {
+    name: "Gaskets",
+    brands: [
+      "Champion", "Spitmaan", "Uniklinger", "Goodrich", "Teadit"
+    ]
+  }
+];
+
 const stats = [
   ["36+", "Years experience"],
   ["10+", "Product groups"],
@@ -114,7 +165,7 @@ const stats = [
 
 function HomePage() {
   return (
-    <SiteLayout>
+    <>
       {/* Hero */}
       <section id="top" className="relative min-h-[680px] bg-ink">
         <img
@@ -312,6 +363,30 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Brands We Deal In */}
+      <section className="bg-steel-light py-16 border-t border-border/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-12 text-center md:text-left">
+            <p className="mb-3 text-xs font-bold uppercase text-brand-light">Brands & Manufacturers</p>
+            <h2 className="text-2xl font-extrabold text-brand-deep sm:text-3xl">Premium Brands We Stock & Supply</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {brandCategories.map((category) => (
+              <div key={category.name} className="bg-white p-6 border border-border transition-colors hover:border-brand-light">
+                <h3 className="mb-4 text-sm font-extrabold uppercase text-brand-deep border-b border-border pb-3">{category.name}</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {category.brands.map((brand) => (
+                    <li key={brand} className="bg-steel-light px-3.5 py-2 text-sm font-semibold text-brand-deep shadow-sm">
+                      {brand}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Industries */}
       <section id="industries" className="relative py-24 text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -352,6 +427,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-    </SiteLayout>
+    </>
   );
 }

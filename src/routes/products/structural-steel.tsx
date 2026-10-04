@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
-import { SiteLayout } from "../../components/SiteLayout";
 import steelImage from "../../assets/structural-steel.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
@@ -95,7 +94,7 @@ function ProductGrid({ title, subtitle, items }: { title: string; subtitle?: str
 
 function StructuralSteelPage() {
   return (
-    <SiteLayout>
+    <>
       {/* Hero */}
       <div className="relative bg-ink py-20 text-primary-foreground">
         <img
@@ -187,6 +186,23 @@ function StructuralSteelPage() {
         />
       </div>
 
+      {/* Brands */}
+      <div className="border-t border-border bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="mb-6 text-xl font-extrabold text-brand-deep">Brands We Stock</h2>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "SAIL", "Tata Steel", "JSW", "AM/NS India",
+              "Jindal Steel & Power (JSPL)", "RINL", "APL Apollo"
+            ].map((brand) => (
+              <span key={brand} className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-border bg-steel-light py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -222,6 +238,7 @@ function StructuralSteelPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { Mail, MapPin, Menu, Phone, X, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Mail, MapPin, Menu, Phone, X, Instagram, Facebook, Linkedin, ChevronDown } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 
@@ -55,13 +55,29 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </Link>
           <div className="flex shrink-0 items-center gap-4">
             <nav className="hidden items-center gap-6 text-xs font-bold uppercase lg:flex" aria-label="Main navigation">
-              {navLinks.map(({ label, href }) =>
-                href.startsWith("/#") ? (
+              {navLinks.map(({ label, href }) => {
+                if (label === "Products") {
+                  return (
+                    <div key={href} className="group relative py-2">
+                      <Link to={href as string} className="flex items-center gap-1 transition-colors hover:text-brand-light">
+                        {label} <ChevronDown size={14} className="mt-0.5" />
+                      </Link>
+                      <div className="absolute left-0 top-full hidden w-56 flex-col bg-white border border-border shadow-lg group-hover:flex z-50">
+                        {footerProductLinks.map((p) => (
+                          <Link key={p.href} to={p.href} className="px-4 py-3 text-xs font-bold text-brand-deep hover:bg-steel-light hover:text-brand-light transition-colors border-b border-border last:border-0">
+                            {p.lbl}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                return href.startsWith("/#") ? (
                   <a key={href} href={href} className="transition-colors hover:text-brand-light">{label}</a>
                 ) : (
                   <Link key={href} to={href as string} className="transition-colors hover:text-brand-light">{label}</Link>
                 )
-              )}
+              })}
             </nav>
             <Link to="/contact" className="hidden bg-brand-light px-5 py-3 text-xs font-bold uppercase text-primary-foreground transition-colors hover:bg-brand sm:inline-flex">
               Request quote
@@ -78,20 +94,36 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </div>
         </div>
         {menuOpen && (
-          <nav className="border-t border-border bg-background px-4 py-4 lg:hidden" aria-label="Mobile navigation">
-            {navLinks.map(({ label, href }) =>
-              href.startsWith("/#") ? (
+          <nav className="border-t border-border bg-background px-4 py-4 lg:hidden max-h-[70vh] overflow-y-auto" aria-label="Mobile navigation">
+            {navLinks.map(({ label, href }) => {
+              if (label === "Products") {
+                return (
+                  <div key={href} className="border-b border-border py-3">
+                    <Link to={href as string} onClick={() => setMenuOpen(false)} className="flex items-center justify-between text-sm font-bold uppercase">
+                      {label}
+                    </Link>
+                    <div className="mt-3 pl-4 flex flex-col gap-3 border-l-2 border-brand-light/20">
+                      {footerProductLinks.map((p) => (
+                        <Link key={p.href} to={p.href} onClick={() => setMenuOpen(false)} className="text-xs font-semibold text-steel uppercase transition-colors hover:text-brand-light">
+                          {p.lbl}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              return href.startsWith("/#") ? (
                 <a key={href} href={href} onClick={() => setMenuOpen(false)} className="block border-b border-border py-3 text-sm font-bold uppercase">{label}</a>
               ) : (
                 <Link key={href} to={href as string} onClick={() => setMenuOpen(false)} className="block border-b border-border py-3 text-sm font-bold uppercase">{label}</Link>
               )
-            )}
+            })}
           </nav>
         )}
       </header>
 
       {/* Page content */}
-      <main key={location.pathname} className="min-h-screen animate-fade-in-up">
+      <main className="min-h-screen animate-fade-in-up">
         {children}
       </main>
 
@@ -149,13 +181,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="https://www.linkedin.com/in/hiren-r-shah-4792521b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#0A66C2]">
+            <a href="https://www.linkedin.com/in/hiren-r-shah-4792521b" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#0A66C2]">
               <Linkedin size={20} />
             </a>
-            <a href="https://www.instagram.com/metal.hiren?igsh=Z21iYm0xNTBxeDVo" target="_blank" rel="noreferrer" aria-label="Instagram" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#E1306C]">
+            <a href="https://www.instagram.com/metal.hiren" target="_blank" rel="noreferrer" aria-label="Instagram" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#E1306C]">
               <Instagram size={20} />
             </a>
-            <a href="https://www.facebook.com/hirenmetal.in?rdid=4qa5bz1vwb2oWGwg&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18WQz41x6G%2F#" target="_blank" rel="noreferrer" aria-label="Facebook" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#1877F2]">
+            <a href="https://www.facebook.com/hirenmetal.in" target="_blank" rel="noreferrer" aria-label="Facebook" className="transform transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-[#1877F2]">
               <Facebook size={20} />
             </a>
           </div>

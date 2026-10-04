@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail } from "lucide-react";
-import { SiteLayout } from "../../components/SiteLayout";
 import fastenersImage from "../../assets/fasteners.avif";
 
 const SITE_URL = "https://hirenpipes.in";
@@ -53,7 +52,7 @@ const coatings = [
 
 function FastenersPage() {
   return (
-    <SiteLayout>
+    <>
       <div className="relative bg-ink py-20 text-primary-foreground">
         <img
           src={fastenersImage}
@@ -116,6 +115,23 @@ function FastenersPage() {
         </section>
       </div>
 
+      {/* Brands */}
+      <div className="border-t border-border bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="mb-6 text-xl font-extrabold text-brand-deep">Brands We Stock</h2>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "Unbrako", "Sundram Fasteners", "TVS Fasteners",
+              "Precision Fasteners", "Raj Fasteners"
+            ].map((brand) => (
+              <span key={brand} className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-border bg-steel-light py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -148,8 +164,9 @@ function FastenersPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+
 
 

@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout } from "../components/SiteLayout";
 
 const SITE_URL = "https://hirenpipes.in";
 const title = "Our Esteemed Clients | Hiren Pipes & Fittings";
@@ -52,7 +51,7 @@ const internationalClients = [
 
 function ClientsPage() {
   return (
-    <SiteLayout>
+    <>
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
@@ -115,6 +114,7 @@ function ClientsPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+

@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail } from "lucide-react";
-import { SiteLayout } from "../../components/SiteLayout";
 import pipesImage from "../../assets/carbon-steel-pipes.jpg";
 
 const SITE_URL = "https://hirenpipes.in";
@@ -106,7 +105,7 @@ const pipeTypes = [
 
 function PipesTubesPage() {
   return (
-    <SiteLayout>
+    <>
       {/* Hero */}
       <div className="relative bg-ink py-20 text-primary-foreground">
         <img
@@ -168,6 +167,26 @@ function PipesTubesPage() {
       </div>
       </div>
 
+      {/* Brands */}
+      <div className="border-t border-border bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="mb-6 text-xl font-extrabold text-brand-deep">Brands We Stock</h2>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "SAIL", "Jindal", "MSL (Maharashtra Seamless)", "JSL (Jindal Stainless)",
+              "Apollo", "Asian", "Suryaprakash", "AM/NS India", "Tata Steel",
+              "JSW Steel", "RINL / VIZAG Steel", "APL Apollo", "Ratnamani",
+              "ISMT", "Kirloskar Ferrous", "Surya Roshni", "Jindal Stainless Hisar (JSHL)",
+              "Swastico Pipes & Tubes", "Venus Pipes & Tubes", "Ratnamani Metals & Tubes"
+            ].map((brand) => (
+              <span key={brand} className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-border bg-steel-light py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -202,7 +221,8 @@ function PipesTubesPage() {
           </div>
         </div>
       </div>
-    </SiteLayout>
+    </>
   );
 }
+
 
