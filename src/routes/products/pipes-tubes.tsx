@@ -96,7 +96,7 @@ const pipeTypes = [
   {
     name: "Square & Rectangular Pipes",
     standards: ["IS:4923 (hollow sections)", "EN 10219 / 10210"],
-    sizes: "20×20mm to 200×200mm (square); 20×30mm to 150×200mm (rectangular)",
+    sizes: "20×20mm to 1000×1000mm (square); 26×13mm to 1000×950mm (rectangular)",
     schedule: "1.5mm to 12mm wall thickness",
     material: "Mild steel, carbon steel, stainless steel",
     uses: "Structural fabrication, gates, grills, furniture, handrails, support frames.",

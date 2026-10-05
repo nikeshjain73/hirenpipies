@@ -6,7 +6,7 @@ import office2 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.4
 import office3 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.45 PM (2).jpeg";
 import office4 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.46 PM.jpeg";
 import office5 from "../assets/Office_image/WhatsApp Image 2026-09-29 at 10.22.45 PM (3).jpeg";
-import directorImg from "../assets/hiren-shah.jpg";
+import directorImg from "../assets/hiren-shah.jpeg";
 
 import { useState } from "react";
 

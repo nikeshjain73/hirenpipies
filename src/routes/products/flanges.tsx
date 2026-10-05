@@ -79,7 +79,7 @@ const flangeTypes = [
   },
   {
     name: "Plate Flanges",
-    std: "ASME B16.5 / IS:6392",
+    std: "ASME B16.5 / IS-2062",
     sizes: "1/2\" to 24\"",
     pressure: "150# to 300#",
     desc: "Flat plate flanges welded to pipe. Cost-effective for low-pressure systems. Also called flat face flanges.",
