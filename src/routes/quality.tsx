@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
-import inspectionImage from "../assets/quality-inspection.jpg";
+import inspectionImage from "../assets/quality-inspection.png";
 
 const SITE_URL = "https://hirenpipes.in";
 const title = "Quality Assurance | TPI LLOYDS, EIL, TUV, Bureau Veritas | Hiren Pipes";
