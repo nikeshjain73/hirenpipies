@@ -10,7 +10,7 @@ import groovedImage from "../../assets/grooved-fittings.jpg";
 import gratingImage from "../../assets/hdgi-gratings.jpg";
 import steelImage from "../../assets/structural-steel.jpg";
 
-const SITE_URL = "https://hirenpipes.in";
+const SITE_URL = "https://www.hirenpipes.in";
 const title = "Industrial Pipes, Flanges, Valves & Fittings | Hiren Pipes";
 const description =
   "Complete product catalogue — industrial pipes & tubes, flanges, pipe fittings, valves, fasteners, gaskets and structural steel. ASTM / ASME / API / IS standards. Manufacturer, exporter, stockist from Ankleshwar, Gujarat.";
@@ -31,23 +31,23 @@ export const Route = createFileRoute("/products/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": [
+          itemListElement: [
             {
               "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": SITE_URL
+              position: 1,
+              name: "Home",
+              item: SITE_URL,
             },
             {
               "@type": "ListItem",
-              "position": 2,
-              "name": "Products",
-              "item": `${SITE_URL}/products`
-            }
-          ]
-        })
-      }
-    ]
+              position: 2,
+              name: "Products",
+              item: `${SITE_URL}/products`,
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ProductsPage,
 });
@@ -59,7 +59,11 @@ const allProducts = [
     href: "/products/pipes-tubes",
     tag: "ASTM / API / IS",
     desc: "Carbon steel seamless, alloy steel, stainless steel, nickel-based, MS ERW, GI, large-diameter spiral welded and square/rectangular pipes. API 5L, IS:1239, IS:3589.",
-    standards: ["API 5L X42–X79 PSL1/PSL2", "IS:1239 Light/Medium/Heavy", "ASTM A106/A53, A335, A312"],
+    standards: [
+      "API 5L X42–X79 PSL1/PSL2",
+      "IS:1239 Light/Medium/Heavy",
+      "ASTM A106/A53, A335, A312",
+    ],
   },
   {
     title: "Flanges",
@@ -67,7 +71,11 @@ const allProducts = [
     href: "/products/flanges",
     tag: "ASME B16.5 / ANSI B16.47",
     desc: "Weld neck, slip-on, blind, socket weld, lap joint, plate, reducing, RTJ, tongue & groove, male & female, DIN and BS 10 flanges in all pressure classes.",
-    standards: ["ANSI B16.47 / ASME B16.5", "150# to 2500# pressure class", "Carbon / Alloy / SS / Duplex"],
+    standards: [
+      "ANSI B16.47 / ASME B16.5",
+      "150# to 2500# pressure class",
+      "Carbon / Alloy / SS / Duplex",
+    ],
   },
   {
     title: "Pipe Fittings",
@@ -83,7 +91,11 @@ const allProducts = [
     href: "/products/valves",
     tag: "Gate / Globe / Ball / Butterfly",
     desc: "Gate, Globe, Ball, Butterfly, Check, Needle, Manifold, NRV, PRV, Sluice, Knife Gate, Safety, Pneumatic, Steam Trap (TDS), Strainers (Y & T), Actuator Valves, Sight Glass.",
-    standards: ["Flanged / Butt-weld / Threaded", "Socket Weld / Forged ends", "Gear & Hand Wheel operated"],
+    standards: [
+      "Flanged / Butt-weld / Threaded",
+      "Socket Weld / Forged ends",
+      "Gear & Hand Wheel operated",
+    ],
   },
   {
     title: "Fasteners & Studs",
@@ -91,7 +103,11 @@ const allProducts = [
     href: "/products/fasteners",
     tag: "ASTM A193 / A194",
     desc: "Hex head bolts, stud bolts, Allen cap, CSK, grub screws, eye bolts, nuts & washers, anchor fasteners, U-bolts, foundation bolts. All grades and surface coatings.",
-    standards: ["ASTM A193 Gr. B7/L7/B8/B8M", "ASTM A194 Gr. 2H/7/8/8M", "Gr. 4.6 / 5.6 / 8.8 / 10.9 / 12.9"],
+    standards: [
+      "ASTM A193 Gr. B7/L7/B8/B8M",
+      "ASTM A194 Gr. 2H/7/8/8M",
+      "Gr. 4.6 / 5.6 / 8.8 / 10.9 / 12.9",
+    ],
   },
   {
     title: "Gaskets & Sealing",
@@ -99,7 +115,11 @@ const allProducts = [
     href: "/products/gaskets",
     tag: "Spiral Wound / RTJ / MIJ",
     desc: "Spiral wound gaskets, RTJ ring joint gaskets, Kammprofile, heat exchanger, double jacketed, insulating kit gaskets, monolithic insulation joints. All filler materials.",
-    standards: ["ANSI B16.20 standard", "RF & FF type flanges", "PTFE / Graphite / Asbestos / Ceramic"],
+    standards: [
+      "ANSI B16.20 standard",
+      "RF & FF type flanges",
+      "PTFE / Graphite / Asbestos / Ceramic",
+    ],
   },
   {
     title: "Grooved Fittings",
@@ -127,7 +147,7 @@ const allProducts = [
   },
 ];
 
-function ProductCard({ p }: { p: typeof allProducts[0] }) {
+function ProductCard({ p }: { p: (typeof allProducts)[0] }) {
   return (
     <article className="group overflow-hidden rounded-xl border border-black/5 bg-white/70 backdrop-blur-lg shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
       {p.image && (
@@ -155,10 +175,15 @@ function ProductCard({ p }: { p: typeof allProducts[0] }) {
         <p className="mt-3 text-sm leading-relaxed text-steel">{p.desc}</p>
         <ul className="mt-4 space-y-1">
           {p.standards.map((s) => (
-            <li key={s} className="text-xs text-brand font-semibold">• {s}</li>
+            <li key={s} className="text-xs text-brand font-semibold">
+              • {s}
+            </li>
           ))}
         </ul>
-        <Link to={p.href} className="mt-5 inline-flex items-center gap-2 bg-brand-deep px-4 py-2.5 text-xs font-bold uppercase text-primary-foreground hover:bg-brand transition-colors">
+        <Link
+          to={p.href}
+          className="mt-5 inline-flex items-center gap-2 bg-brand-deep px-4 py-2.5 text-xs font-bold uppercase text-primary-foreground hover:bg-brand transition-colors"
+        >
           Full specifications <ArrowRight size={14} />
         </Link>
       </div>
@@ -173,13 +198,16 @@ function ProductsPage() {
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-primary-foreground">Home</Link>
+            <Link to="/" className="hover:text-primary-foreground">
+              Home
+            </Link>
             <span className="mx-2">/</span>
             <span>Products</span>
           </nav>
           <h1 className="text-4xl font-extrabold sm:text-5xl">Product Portfolio</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
-            A total piping solution under one roof — pipes, fittings, flanges, valves, fasteners, gaskets and structural steel across all grades and standards.
+            A total piping solution under one roof — pipes, fittings, flanges, valves, fasteners,
+            gaskets and structural steel across all grades and standards.
           </p>
         </div>
       </div>
@@ -190,7 +218,9 @@ function ProductsPage() {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-white via-transparent to-white"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {allProducts.map((p) => <ProductCard key={p.href} p={p} />)}
+            {allProducts.map((p) => (
+              <ProductCard key={p.href} p={p} />
+            ))}
           </div>
         </div>
       </section>
@@ -198,13 +228,26 @@ function ProductsPage() {
       {/* CTA */}
       <div className="border-t border-border bg-steel-light py-12">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <h2 className="text-2xl font-extrabold text-brand-deep">Need a specific grade or standard?</h2>
-          <p className="mt-3 text-sm text-steel">Share your bill of materials — we'll respond with pricing and availability within 24 hours.</p>
+          <h2 className="text-2xl font-extrabold text-brand-deep">
+            Need a specific grade or standard?
+          </h2>
+          <p className="mt-3 text-sm text-steel">
+            Share your bill of materials — we'll respond with pricing and availability within 24
+            hours.
+          </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="https://wa.me/919586911478" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-light px-6 py-3 text-xs font-bold uppercase text-primary-foreground hover:bg-brand">
+            <a
+              href="https://wa.me/919586911478"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-brand-light px-6 py-3 text-xs font-bold uppercase text-primary-foreground hover:bg-brand"
+            >
               WhatsApp BOM
             </a>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 border border-brand-deep px-6 py-3 text-xs font-bold uppercase text-brand-deep hover:bg-brand-deep hover:text-primary-foreground">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 border border-brand-deep px-6 py-3 text-xs font-bold uppercase text-brand-deep hover:bg-brand-deep hover:text-primary-foreground"
+            >
               Email enquiry
             </Link>
           </div>
@@ -213,4 +256,3 @@ function ProductsPage() {
     </>
   );
 }
-

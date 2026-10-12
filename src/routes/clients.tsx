@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-const SITE_URL = "https://hirenpipes.in";
+const SITE_URL = "https://www.hirenpipes.in";
 const title = "Our Esteemed Clients | Hiren Pipes & Fittings";
 const description =
   "Hiren Pipes & Fittings is a trusted partner to numerous national and international organizations. Discover our clientele across various industrial sectors.";
@@ -55,23 +55,31 @@ function ClientsPage() {
       <div className="bg-brand-deep py-16 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-primary-foreground">Home</Link>
+            <Link to="/" className="hover:text-primary-foreground">
+              Home
+            </Link>
             <span className="mx-2">/</span>
             <span>Clients</span>
           </nav>
           <h1 className="text-4xl font-extrabold sm:text-5xl">Our Clients</h1>
           <p className="mt-4 max-w-xl text-primary-foreground/80">
-            Trusted by industry leaders in India and around the globe to supply high-grade industrial piping and components.
+            Trusted by industry leaders in India and around the globe to supply high-grade
+            industrial piping and components.
           </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-16">
-          <h2 className="mb-8 text-2xl font-extrabold text-brand-deep border-b border-border pb-4">Domestic Clients</h2>
+          <h2 className="mb-8 text-2xl font-extrabold text-brand-deep border-b border-border pb-4">
+            Domestic Clients
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {domesticClients.map((client, idx) => (
-              <div key={idx} className="flex h-32 items-center justify-center rounded-lg border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+              <div
+                key={idx}
+                className="flex h-32 items-center justify-center rounded-lg border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+              >
                 <img
                   src={client.src}
                   alt={client.alt}
@@ -84,10 +92,15 @@ function ClientsPage() {
         </div>
 
         <div>
-          <h2 className="mb-8 text-2xl font-extrabold text-brand-deep border-b border-border pb-4">International Clients</h2>
+          <h2 className="mb-8 text-2xl font-extrabold text-brand-deep border-b border-border pb-4">
+            International Clients
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {internationalClients.map((client, idx) => (
-              <div key={idx} className="flex h-32 items-center justify-center rounded-lg border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+              <div
+                key={idx}
+                className="flex h-32 items-center justify-center rounded-lg border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+              >
                 <img
                   src={client.src}
                   alt={client.alt}
@@ -108,7 +121,10 @@ function ClientsPage() {
             Send us your requirement today to experience our quality and timely delivery firsthand.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="bg-brand-light px-8 py-3 text-sm font-bold uppercase text-primary-foreground transition-colors hover:bg-brand">
+            <Link
+              to="/contact"
+              className="bg-brand-light px-8 py-3 text-sm font-bold uppercase text-primary-foreground transition-colors hover:bg-brand"
+            >
               Contact Us
             </Link>
           </div>
@@ -117,4 +133,3 @@ function ClientsPage() {
     </>
   );
 }
-

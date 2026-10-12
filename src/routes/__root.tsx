@@ -91,9 +91,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Hiren Pipes & Fittings" },
       // Indexing
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
       // Keywords (broad set; helps some crawlers)
-      { name: "keywords", content: "industrial pipes, pipe fittings, flanges, valves, fasteners, carbon steel pipes, stainless steel pipes, buttweld fittings, forged flanges, pipe supplier India, Ankleshwar, Gujarat" },
+      {
+        name: "keywords",
+        content:
+          "industrial pipes, pipe fittings, flanges, valves, fasteners, carbon steel pipes, stainless steel pipes, buttweld fittings, forged flanges, pipe supplier India, Ankleshwar, Gujarat",
+      },
       // Local / Geo SEO
       { name: "geo.region", content: "IN-GJ" },
       { name: "geo.placename", content: "Ankleshwar, Gujarat, India" },
@@ -105,13 +112,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Hiren Pipes & Fittings — Industrial Pipes, Flanges & Fittings Supplier, Ankleshwar, Gujarat" },
+      {
+        property: "og:image:alt",
+        content:
+          "Hiren Pipes & Fittings — Industrial Pipes, Flanges & Fittings Supplier, Ankleshwar, Gujarat",
+      },
       { property: "og:locale", content: "en_IN" },
       // Twitter / X
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@hirenpipes" },
       { name: "twitter:image", content: OG_IMAGE },
-      { name: "twitter:image:alt", content: "Hiren Pipes & Fittings — Industrial Pipes, Flanges & Fittings Supplier" },
+      {
+        name: "twitter:image:alt",
+        content: "Hiren Pipes & Fittings — Industrial Pipes, Flanges & Fittings Supplier",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -120,7 +134,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preload", href: "/og-image.jpg", as: "image" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

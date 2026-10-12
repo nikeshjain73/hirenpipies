@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 import gasketsImage from "../../assets/gaskets.avif";
 
-const SITE_URL = "https://hirenpipes.in";
+const SITE_URL = "https://www.hirenpipes.in";
 const title = "Gaskets & Sealing Supplier India | Spiral Wound, RTJ, MIJ Gaskets | Hiren Pipes";
 const description =
   "Stockist & supplier of gaskets — Spiral Wound Gaskets, Ring Type Joint (RTJ), Kammprofile, Heat Exchanger, Double Jacketed, Insulating Kit Gaskets, Monolithic Insulation Joints (MIJ). PTFE, Graphite, Non-Asbestos, Ceramic. ANSI B16.20. Ankleshwar, Gujarat.";
@@ -81,13 +81,34 @@ const gasketTypes = [
 ];
 
 const sheetMaterials = [
-  { name: "Non-Asbestos Gasket Sheets", spec: "Available in various grades for different chemical compatibility. Blue, white and yellow grades." },
-  { name: "PTFE / Teflon Sheets & Tapes", spec: "Chemical-resistant, food-grade. Full-face, inside bolt circle and custom shapes. Also PTFE rope/cord." },
-  { name: "Graphite / Graphoil Sheets", spec: "Excellent for high-temperature steam, chemical and refinery service. Flexible graphite with SS tanged insert." },
-  { name: "Asbestos Sheets", spec: "Available on request for specific legacy applications where still permissible." },
-  { name: "Rubber Sheets (EPDM / Neoprene)", spec: "For low-pressure water, air and mild chemicals. Available in different hardness grades." },
-  { name: "Ceramic / High-Temp Sheets", spec: "For extreme temperature service above 500°C. Used in furnaces, boilers and kilns." },
-  { name: "Gland Packing Rope", spec: "Braided packing rope for valve glands and pump stuffing boxes. Graphite, PTFE, Kevlar options." },
+  {
+    name: "Non-Asbestos Gasket Sheets",
+    spec: "Available in various grades for different chemical compatibility. Blue, white and yellow grades.",
+  },
+  {
+    name: "PTFE / Teflon Sheets & Tapes",
+    spec: "Chemical-resistant, food-grade. Full-face, inside bolt circle and custom shapes. Also PTFE rope/cord.",
+  },
+  {
+    name: "Graphite / Graphoil Sheets",
+    spec: "Excellent for high-temperature steam, chemical and refinery service. Flexible graphite with SS tanged insert.",
+  },
+  {
+    name: "Asbestos Sheets",
+    spec: "Available on request for specific legacy applications where still permissible.",
+  },
+  {
+    name: "Rubber Sheets (EPDM / Neoprene)",
+    spec: "For low-pressure water, air and mild chemicals. Available in different hardness grades.",
+  },
+  {
+    name: "Ceramic / High-Temp Sheets",
+    spec: "For extreme temperature service above 500°C. Used in furnaces, boilers and kilns.",
+  },
+  {
+    name: "Gland Packing Rope",
+    spec: "Braided packing rope for valve glands and pump stuffing boxes. Graphite, PTFE, Kevlar options.",
+  },
 ];
 
 function GasketsPage() {
@@ -103,16 +124,23 @@ function GasketsPage() {
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <nav className="mb-4 text-xs text-primary-foreground/50" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-primary-foreground">Home</Link>
+            <Link to="/" className="hover:text-primary-foreground">
+              Home
+            </Link>
             <span className="mx-2">/</span>
-            <Link to="/products" className="hover:text-primary-foreground">Products</Link>
+            <Link to="/products" className="hover:text-primary-foreground">
+              Products
+            </Link>
             <span className="mx-2">/</span>
             <span>Gaskets & Sealing</span>
           </nav>
-          <p className="mb-3 text-xs font-bold uppercase text-brand-pale">Spiral Wound · RTJ · Kammprofile · MIJ</p>
+          <p className="mb-3 text-xs font-bold uppercase text-brand-pale">
+            Spiral Wound · RTJ · Kammprofile · MIJ
+          </p>
           <h1 className="text-4xl font-extrabold sm:text-5xl">Gaskets & Sealing Products</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
-            Full range of gaskets and sealing products for all flange face types, pressure ratings and temperature ranges. ANSI B16.20 standard spiral wound and RTJ gaskets in stock.
+            Full range of gaskets and sealing products for all flange face types, pressure ratings
+            and temperature ranges. ANSI B16.20 standard spiral wound and RTJ gaskets in stock.
           </p>
         </div>
       </div>
@@ -123,14 +151,26 @@ function GasketsPage() {
           <h2 className="mb-8 text-2xl font-extrabold text-brand-deep">Gasket Types</h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {gasketTypes.map((g) => (
-              <article key={g.name} className="rounded-xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur-lg transition-shadow hover:shadow-md">
+              <article
+                key={g.name}
+                className="rounded-xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur-lg transition-shadow hover:shadow-md"
+              >
                 <h3 className="text-base font-extrabold text-brand-deep">{g.name}</h3>
                 <p className="mt-1 text-[10px] font-bold uppercase text-brand-light">{g.std}</p>
                 <p className="mt-3 text-sm leading-relaxed text-steel">{g.desc}</p>
                 <div className="mt-4 space-y-1 text-xs">
-                  <p><span className="font-bold text-brand-deep">Filler: </span><span className="text-steel">{g.fillers}</span></p>
-                  <p><span className="font-bold text-brand-deep">Face types: </span><span className="text-steel">{g.faces}</span></p>
-                  <p><span className="font-bold text-brand-deep">Materials: </span><span className="text-steel">{g.materials}</span></p>
+                  <p>
+                    <span className="font-bold text-brand-deep">Filler: </span>
+                    <span className="text-steel">{g.fillers}</span>
+                  </p>
+                  <p>
+                    <span className="font-bold text-brand-deep">Face types: </span>
+                    <span className="text-steel">{g.faces}</span>
+                  </p>
+                  <p>
+                    <span className="font-bold text-brand-deep">Materials: </span>
+                    <span className="text-steel">{g.materials}</span>
+                  </p>
                 </div>
               </article>
             ))}
@@ -139,8 +179,13 @@ function GasketsPage() {
 
         {/* Sheet materials */}
         <section>
-          <h2 className="mb-6 text-2xl font-extrabold text-brand-deep">Gasket Sheet Materials & Cut Gaskets</h2>
-          <p className="mb-6 text-sm text-steel">Cut soft gaskets manufactured as per ANSI B16.20 covering RF & FF type flanges. Custom shapes and sizes available on request.</p>
+          <h2 className="mb-6 text-2xl font-extrabold text-brand-deep">
+            Gasket Sheet Materials & Cut Gaskets
+          </h2>
+          <p className="mb-6 text-sm text-steel">
+            Cut soft gaskets manufactured as per ANSI B16.20 covering RF & FF type flanges. Custom
+            shapes and sizes available on request.
+          </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sheetMaterials.map((s) => (
               <div key={s.name} className="border-l-2 border-brand-light bg-steel-light p-4">
@@ -157,10 +202,11 @@ function GasketsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="mb-6 text-xl font-extrabold text-brand-deep">Brands We Stock</h2>
           <div className="flex flex-wrap gap-2">
-            {[
-              "Champion", "Spitmaan", "Uniklinger", "Goodrich", "Teadit"
-            ].map((brand) => (
-              <span key={brand} className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm">
+            {["Champion", "Spitmaan", "Uniklinger", "Goodrich", "Teadit"].map((brand) => (
+              <span
+                key={brand}
+                className="bg-steel-light px-4 py-2 text-sm font-semibold text-brand-deep border border-border/50 shadow-sm"
+              >
                 {brand}
               </span>
             ))}
@@ -179,7 +225,11 @@ function GasketsPage() {
               ["Fasteners & Studs", "/products/fasteners"],
               ["Structural Steel", "/products/structural-steel"],
             ].map(([n, h]) => (
-              <Link key={h} to={h as string} className="inline-flex items-center gap-2 border border-brand-deep px-4 py-2 text-xs font-bold uppercase text-brand-deep hover:bg-brand-deep hover:text-primary-foreground">
+              <Link
+                key={h}
+                to={h as string}
+                className="inline-flex items-center gap-2 border border-brand-deep px-4 py-2 text-xs font-bold uppercase text-brand-deep hover:bg-brand-deep hover:text-primary-foreground"
+              >
                 {n} <ArrowRight size={12} />
               </Link>
             ))}
@@ -190,12 +240,22 @@ function GasketsPage() {
       <div className="bg-brand-deep py-12 text-primary-foreground">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
           <h2 className="text-2xl font-extrabold">Get gasket specifications & pricing</h2>
-          <p className="mt-2 text-sm text-primary-foreground/70">Share flange size, pressure class, material and face type — we'll respond promptly.</p>
+          <p className="mt-2 text-sm text-primary-foreground/70">
+            Share flange size, pressure class, material and face type — we'll respond promptly.
+          </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="https://wa.me/919586911478" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-light px-6 py-3 text-xs font-bold uppercase hover:bg-brand">
+            <a
+              href="https://wa.me/919586911478"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-brand-light px-6 py-3 text-xs font-bold uppercase hover:bg-brand"
+            >
               <Phone size={16} /> +91 95869 11478
             </a>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 border border-primary-foreground/40 px-6 py-3 text-xs font-bold uppercase hover:bg-primary-foreground/10">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 border border-primary-foreground/40 px-6 py-3 text-xs font-bold uppercase hover:bg-primary-foreground/10"
+            >
               <Mail size={16} /> metal.hiren@gmail.com
             </Link>
           </div>
@@ -204,6 +264,3 @@ function GasketsPage() {
     </>
   );
 }
-
-
-
