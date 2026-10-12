@@ -320,42 +320,49 @@ function HomePage() {
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {productCards.map((p) => (
-              <article key={p.title} className="group">
-                <Link to={p.href} className="block">
-                  <div className="relative aspect-square overflow-hidden bg-steel-light">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      width="816"
-                      height="816"
-                    />
-                    <span className="absolute bottom-0 left-0 bg-brand-deep px-4 py-2 text-[10px] font-bold uppercase text-primary-foreground">
-                      {p.tag}
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-xl font-bold text-brand-deep group-hover:text-brand-light transition-colors">
-                    {p.title}
-                  </h3>
+              <article
+                key={p.title}
+                className="group flex flex-col bg-white border border-border/80 shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <Link to={p.href} className="relative aspect-square overflow-hidden bg-steel-light block">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width="816"
+                    height="816"
+                  />
+                  <span className="absolute bottom-0 left-0 bg-brand-deep px-4 py-2 text-[10px] font-bold uppercase text-primary-foreground">
+                    {p.tag}
+                  </span>
                 </Link>
-                <p className="mt-2 text-sm leading-relaxed text-steel">{p.summary}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {p.standards.map((s) => (
-                    <li
-                      key={s}
-                      className="border border-border px-2 py-1 text-[10px] font-bold uppercase text-brand"
+                <div className="flex flex-1 flex-col p-6">
+                  <Link to={p.href}>
+                    <h3 className="text-xl font-bold text-brand-deep group-hover:text-brand-light transition-colors">
+                      {p.title}
+                    </h3>
+                  </Link>
+                  <p className="mt-2 text-sm leading-relaxed text-steel">{p.summary}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {p.standards.map((s) => (
+                      <li
+                        key={s}
+                        className="border border-border/80 bg-steel-light/40 px-2 py-1 text-[10px] font-bold uppercase text-brand"
+                      >
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto pt-5">
+                    <Link
+                      to={p.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase text-brand-light hover:text-brand transition-colors"
                     >
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to={p.href}
-                  className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase text-brand-light hover:text-brand"
-                >
-                  View details <ArrowRight size={12} />
-                </Link>
+                      View details <ArrowRight size={13} />
+                    </Link>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -366,7 +373,7 @@ function HomePage() {
               <Link
                 key={p.href}
                 to={p.href}
-                className="group border border-border p-5 transition-colors hover:border-brand-light"
+                className="group bg-white border border-border/80 p-5 shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-light"
               >
                 <h3 className="text-sm font-extrabold uppercase text-brand-deep group-hover:text-brand-light transition-colors">
                   {p.name}
