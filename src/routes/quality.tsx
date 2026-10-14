@@ -119,12 +119,48 @@ function QualityPage() {
               dispatch.
             </p>
             <ul className="mt-8 space-y-3">
-              {qaPoints.map((pt) => (
-                <li key={pt} className="flex gap-3">
+              {qaPoints.map((pt, index) => (
+                <li key={index} className="flex gap-3">
                   <span className="mt-0.5 grid size-5 shrink-0 place-items-center bg-brand-light text-primary-foreground">
                     <Check size={12} />
                   </span>
-                  <p className="text-sm leading-relaxed text-steel">{pt}</p>
+                  <p className="text-sm leading-relaxed text-steel">
+                    {index === 1 ? (
+                      <>
+                        Strict dimensional verification as per ASME / ASTM / API / IS standards for{" "}
+                        <Link to="/products/pipe-fittings" className="text-brand font-semibold underline hover:text-brand-light">
+                          pipe fittings and olets
+                        </Link>
+                        .
+                      </>
+                    ) : index === 3 ? (
+                      <>
+                        Chemical composition analysis via spectrometer / PMI (Positive Material Identification) across all{" "}
+                        <Link to="/products/flanges" className="text-brand font-semibold underline hover:text-brand-light">
+                          forged flanges (ASME B16.5)
+                        </Link>
+                        .
+                      </>
+                    ) : index === 5 ? (
+                      <>
+                        Non-Destructive Testing (NDT): Radiography (RT), Ultrasonic Testing (UT), Dye Penetrant (DPT), Magnetic Particle (MPT) for{" "}
+                        <Link to="/products/pipes-tubes" className="text-brand font-semibold underline hover:text-brand-light">
+                          RT and UT tested pipes
+                        </Link>
+                        .
+                      </>
+                    ) : index === 6 ? (
+                      <>
+                        Hydrostatic pressure testing as per applicable standards for line pipes and{" "}
+                        <Link to="/products/valves" className="text-brand font-semibold underline hover:text-brand-light">
+                          industrial valves and strainers
+                        </Link>
+                        .
+                      </>
+                    ) : (
+                      pt
+                    )}
+                  </p>
                 </li>
               ))}
             </ul>

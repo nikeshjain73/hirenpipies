@@ -248,8 +248,19 @@ function StructuralSteelPage() {
           </p>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Structural sections, bars, plates, sheets, wire products, scaffolding, fencing, and
-            custom fabrication — a one-stop steel solution for construction, industrial, and
-            infrastructure projects.
+            custom fabrication paired with{" "}
+            <Link to="/products/hdgi-gratings" className="underline hover:text-white">
+              HDGI gratings
+            </Link>
+            , heavy-duty{" "}
+            <Link to="/products/fasteners" className="underline hover:text-white">
+              foundation bolts
+            </Link>
+            , and hollow{" "}
+            <Link to="/products/pipes-tubes" className="underline hover:text-white">
+              square and rectangular pipes
+            </Link>{" "}
+            — a one-stop steel solution for construction, industrial, and infrastructure projects.
           </p>
         </div>
       </div>
@@ -348,11 +359,11 @@ function StructuralSteelPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Flanges", "/products/flanges"],
-              ["Fasteners & Studs", "/products/fasteners"],
-              ["HDGI Gratings", "/products/hdgi-gratings"],
-              ["Grooved Fittings", "/products/grooved-fittings"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["stud bolts and nuts", "/products/fasteners"],
+              ["HDGI gratings", "/products/hdgi-gratings"],
+              ["grooved couplings and fittings", "/products/grooved-fittings"],
             ].map(([n, h]) => (
               <Link
                 key={h}

@@ -293,6 +293,37 @@ function ContactPage() {
               <p className="mt-2 text-sm text-steel">Monday – Saturday: 9:00 AM – 6:00 PM IST</p>
               <p className="mt-1 text-xs text-steel">Sunday: Closed (WhatsApp enquiries welcome)</p>
             </div>
+
+            <div className="mt-6 border border-border p-6">
+              <p className="text-xs font-bold uppercase text-brand-deep">Quick Product Enquiries</p>
+              <p className="mt-1 text-xs text-steel">Explore specifications and availability for our top product lines:</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Link
+                  to="/products/pipes-tubes"
+                  className="border border-brand-deep/30 bg-white px-3 py-1.5 text-xs font-bold text-brand-deep hover:bg-brand-deep hover:text-primary-foreground transition-colors"
+                >
+                  carbon steel and stainless steel pipes
+                </Link>
+                <Link
+                  to="/products/flanges"
+                  className="border border-brand-deep/30 bg-white px-3 py-1.5 text-xs font-bold text-brand-deep hover:bg-brand-deep hover:text-primary-foreground transition-colors"
+                >
+                  forged flanges (ASME B16.5)
+                </Link>
+                <Link
+                  to="/products/pipe-fittings"
+                  className="border border-brand-deep/30 bg-white px-3 py-1.5 text-xs font-bold text-brand-deep hover:bg-brand-deep hover:text-primary-foreground transition-colors"
+                >
+                  pipe fittings and olets
+                </Link>
+                <Link
+                  to="/products/valves"
+                  className="border border-brand-deep/30 bg-white px-3 py-1.5 text-xs font-bold text-brand-deep hover:bg-brand-deep hover:text-primary-foreground transition-colors"
+                >
+                  industrial valves and strainers
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

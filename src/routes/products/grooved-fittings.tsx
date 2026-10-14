@@ -229,8 +229,15 @@ function GroovedFittingsPage() {
           <h1 className="text-4xl font-extrabold sm:text-5xl">Grooved Fittings</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Complete range of ductile iron grooved fittings engineered for high performance and ease
-            of installation in fire protection, HVAC, mining, and industrial piping systems. FM & UL
-            approved, 300 PSI rated.
+            of installation in fire protection, HVAC, mining, and industrial piping systems. Paired alongside{" "}
+            <Link to="/products/pipes-tubes" className="underline hover:text-white">
+              carbon steel and stainless steel pipes
+            </Link>{" "}
+            as a faster alternative to traditional welded{" "}
+            <Link to="/products/pipe-fittings" className="underline hover:text-white">
+              pipe fittings and olets
+            </Link>
+            . FM & UL approved, 300 PSI rated.
           </p>
         </div>
       </div>
@@ -325,11 +332,11 @@ function GroovedFittingsPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Flanges", "/products/flanges"],
-              ["Pipe Fittings", "/products/pipe-fittings"],
-              ["Valves", "/products/valves"],
-              ["Gaskets & Sealing", "/products/gaskets"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["pipe fittings and olets", "/products/pipe-fittings"],
+              ["industrial valves and strainers", "/products/valves"],
+              ["spiral wound and RTJ gaskets", "/products/gaskets"],
             ].map(([n, h]) => (
               <Link
                 key={h}

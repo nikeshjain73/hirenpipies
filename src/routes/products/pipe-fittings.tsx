@@ -151,8 +151,19 @@ function PipeFittingsPage() {
           <h1 className="text-4xl font-extrabold sm:text-5xl">Pipe Fittings</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Full range of buttweld pipe fittings (seamless up to 24", ERW up to 48"), forged socket
-            weld and threaded fittings (1/8" to 4"), and olet branch fittings. All materials and
-            pressure classes.
+            weld and threaded fittings (1/8" to 4"), and olet branch fittings designed for connecting with{" "}
+            <Link to="/products/pipes-tubes" className="underline hover:text-white">
+              carbon steel and stainless steel pipes
+            </Link>{" "}
+            and{" "}
+            <Link to="/products/flanges" className="underline hover:text-white">
+              forged flanges (ASME B16.5)
+            </Link>
+            . We also supply{" "}
+            <Link to="/products/grooved-fittings" className="underline hover:text-white">
+              grooved fittings as a faster alternative to welding
+            </Link>{" "}
+            for rapid installation across all pressure classes.
           </p>
         </div>
       </div>
@@ -258,10 +269,10 @@ function PipeFittingsPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Flanges", "/products/flanges"],
-              ["Valves", "/products/valves"],
-              ["Fasteners & Studs", "/products/fasteners"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["industrial valves and strainers", "/products/valves"],
+              ["stud bolts and nuts", "/products/fasteners"],
             ].map(([n, h]) => (
               <Link
                 key={h}

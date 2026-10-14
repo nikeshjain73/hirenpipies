@@ -138,7 +138,19 @@ function ValvesPage() {
           <h1 className="text-4xl font-extrabold sm:text-5xl">Industrial Valves</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Complete range of industrial valves for process piping, utilities, oil & gas, power and
-            water treatment. All end connections, materials and pressure classes.
+            water treatment. Designed to pair with{" "}
+            <Link to="/products/flanges" className="underline hover:text-white">
+              forged flanges (ASME B16.5)
+            </Link>
+            , sealed with{" "}
+            <Link to="/products/gaskets" className="underline hover:text-white">
+              spiral wound and RTJ gaskets
+            </Link>
+            , and installed using high-tensile{" "}
+            <Link to="/products/fasteners" className="underline hover:text-white">
+              stud bolts and nuts
+            </Link>
+            . All end connections, materials and pressure classes.
           </p>
         </div>
       </div>
@@ -242,10 +254,10 @@ function ValvesPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Flanges", "/products/flanges"],
-              ["Pipe Fittings", "/products/pipe-fittings"],
-              ["Fasteners & Studs", "/products/fasteners"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["pipe fittings and olets", "/products/pipe-fittings"],
+              ["stud bolts and nuts", "/products/fasteners"],
             ].map(([n, h]) => (
               <Link
                 key={h}

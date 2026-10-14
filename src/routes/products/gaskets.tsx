@@ -139,8 +139,15 @@ function GasketsPage() {
           </p>
           <h1 className="text-4xl font-extrabold sm:text-5xl">Gaskets & Sealing Products</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
-            Full range of gaskets and sealing products for all flange face types, pressure ratings
-            and temperature ranges. ANSI B16.20 standard spiral wound and RTJ gaskets in stock.
+            Full range of gaskets and sealing products designed for all{" "}
+            <Link to="/products/flanges" className="underline hover:text-white">
+              forged flanges (ASME B16.5)
+            </Link>{" "}
+            face types, bolted with high-grade{" "}
+            <Link to="/products/fasteners" className="underline hover:text-white">
+              stud bolts and nuts
+            </Link>
+            , across all pressure ratings and temperature ranges. ANSI B16.20 standard spiral wound and RTJ gaskets in stock.
           </p>
         </div>
       </div>
@@ -220,10 +227,10 @@ function GasketsPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Flanges", "/products/flanges"],
-              ["Valves", "/products/valves"],
-              ["Fasteners & Studs", "/products/fasteners"],
-              ["Structural Steel", "/products/structural-steel"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["industrial valves and strainers", "/products/valves"],
+              ["stud bolts and nuts", "/products/fasteners"],
+              ["structural steel sections", "/products/structural-steel"],
             ].map(([n, h]) => (
               <Link
                 key={h}

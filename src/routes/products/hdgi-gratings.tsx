@@ -171,11 +171,17 @@ function HdgiGratingsPage() {
             Hot Dip Galvanized · High Strength · Anti-Slip · Custom Sizes
           </p>
           <h1 className="text-4xl font-extrabold sm:text-5xl">HDGI Gratings</h1>
-          <p className="mt-2 text-lg font-bold text-brand-pale">Strong. Durable. Reliable.</p>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             High quality Hot Dip Galvanized Iron (HDGI) gratings for industrial and construction
-            applications. Walkways, platforms, drain covers, trench covers, industrial flooring,
-            stair treads and more.
+            applications. Manufactured alongside our{" "}
+            <Link to="/products/structural-steel" className="underline hover:text-white">
+              structural steel sections
+            </Link>{" "}
+            and secured with heavy-duty{" "}
+            <Link to="/products/fasteners" className="underline hover:text-white">
+              stud bolts and nuts
+            </Link>
+            . Walkways, platforms, drain covers, trench covers, industrial flooring, stair treads and more.
           </p>
         </div>
       </div>
@@ -288,11 +294,11 @@ function HdgiGratingsPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Structural Steel", "/products/structural-steel"],
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Flanges", "/products/flanges"],
-              ["Grooved Fittings", "/products/grooved-fittings"],
-              ["Fasteners & Studs", "/products/fasteners"],
+              ["structural steel sections", "/products/structural-steel"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["grooved couplings and fittings", "/products/grooved-fittings"],
+              ["stud bolts and nuts", "/products/fasteners"],
             ].map(([n, h]) => (
               <Link
                 key={h}

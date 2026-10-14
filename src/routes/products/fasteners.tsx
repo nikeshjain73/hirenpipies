@@ -134,8 +134,19 @@ function FastenersPage() {
           <h1 className="text-4xl font-extrabold sm:text-5xl">Fasteners & Studs</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Complete range of bolts, studs, nuts and washers for industrial piping, pressure
-            vessels, flanges and structural applications. ASTM A193 B7 stud bolts available M6 to
-            M180 (1/4" to 7" diameter).
+            vessels,{" "}
+            <Link to="/products/flanges" className="underline hover:text-white">
+              forged flanges (ASME B16.5)
+            </Link>{" "}
+            and{" "}
+            <Link to="/products/gaskets" className="underline hover:text-white">
+              spiral wound and RTJ gaskets
+            </Link>
+            . We also supply heavy-duty{" "}
+            <Link to="/products/structural-steel" className="underline hover:text-white">
+              foundation bolts
+            </Link>{" "}
+            for structural applications. ASTM A193 B7 stud bolts available M6 to M180 (1/4" to 7" diameter).
           </p>
         </div>
       </div>
@@ -212,10 +223,10 @@ function FastenersPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Flanges", "/products/flanges"],
-              ["Valves", "/products/valves"],
-              ["Gaskets & Sealing", "/products/gaskets"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["forged flanges (ASME B16.5)", "/products/flanges"],
+              ["industrial valves and strainers", "/products/valves"],
+              ["spiral wound and RTJ gaskets", "/products/gaskets"],
             ].map(([n, h]) => (
               <Link
                 key={h}

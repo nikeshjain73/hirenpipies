@@ -166,8 +166,23 @@ function PipesTubesPage() {
           <h1 className="text-4xl font-extrabold sm:text-5xl">Industrial Pipes & Tubes</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Complete range of carbon steel, alloy steel, stainless steel, nickel-based, ERW, GI and
-            spiral-welded pipes from our Ankleshwar, Gujarat stockyard. Seamless pipes up to 24",
-            ERW up to 48".
+            spiral-welded pipes paired with matching{" "}
+            <Link to="/products/flanges" className="underline hover:text-white">
+              weld neck and slip-on flanges
+            </Link>
+            ,{" "}
+            <Link to="/products/pipe-fittings" className="underline hover:text-white">
+              butt-weld elbows, tees and reducers
+            </Link>
+            , and{" "}
+            <Link to="/products/valves" className="underline hover:text-white">
+              gate, globe and check valves
+            </Link>{" "}
+            from our Ankleshwar, Gujarat stockyard. All supplied as{" "}
+            <Link to="/quality" className="underline hover:text-white">
+              hydrostatically tested pipes with 100% traceable MTC
+            </Link>
+            . Seamless pipes up to 24", ERW up to 48".
           </p>
         </div>
       </div>
@@ -210,7 +225,27 @@ function PipesTubesPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold uppercase text-brand-light">Applications</p>
-                    <p className="mt-1 text-sm text-steel">{p.uses}</p>
+                    <p className="mt-1 text-sm text-steel">
+                      {p.name === "GI Pipes (Galvanized)" ? (
+                        <>
+                          Water supply, agriculture, fire-fighting with{" "}
+                          <Link to="/products/grooved-fittings" className="text-brand font-semibold underline hover:text-brand-light">
+                            grooved fittings for GI pipes
+                          </Link>
+                          , water treatment plants.
+                        </>
+                      ) : p.name === "Square & Rectangular Pipes" ? (
+                        <>
+                          Structural fabrication alongside{" "}
+                          <Link to="/products/structural-steel" className="text-brand font-semibold underline hover:text-brand-light">
+                            MS angles, channels and beams
+                          </Link>
+                          , gates, grills, furniture, handrails, support frames.
+                        </>
+                      ) : (
+                        p.uses
+                      )}
+                    </p>
                   </div>
                 </div>
               </article>
@@ -257,10 +292,10 @@ function PipesTubesPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipe Fittings", "/products/pipe-fittings"],
-              ["Flanges", "/products/flanges"],
-              ["Fasteners & Studs", "/products/fasteners"],
-              ["Gaskets & Sealing", "/products/gaskets"],
+              ["Pipe fittings and olets", "/products/pipe-fittings"],
+              ["Forged flanges (ASME B16.5)", "/products/flanges"],
+              ["Stud bolts and nuts", "/products/fasteners"],
+              ["Spiral wound and RTJ gaskets", "/products/gaskets"],
             ].map(([n, h]) => (
               <Link
                 key={h}

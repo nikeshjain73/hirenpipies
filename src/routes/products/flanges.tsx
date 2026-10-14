@@ -181,7 +181,23 @@ function FlangesPage() {
           <h1 className="text-4xl font-extrabold sm:text-5xl">Flanges</h1>
           <p className="mt-4 max-w-2xl text-primary-foreground/80">
             Complete range of forged flanges in carbon steel, stainless steel, alloy steel, duplex
-            and nickel alloys. All types, sizes (1/2" to 60") and pressure ratings (150# to 2500#).
+            and nickel alloys — engineered to bolt directly with{" "}
+            <Link to="/products/pipes-tubes" className="underline hover:text-white">
+              seamless pipes (ASTM A106, A312)
+            </Link>
+            , sealed with{" "}
+            <Link to="/products/gaskets" className="underline hover:text-white">
+              spiral wound and RTJ ring gaskets
+            </Link>
+            , and fastened using{" "}
+            <Link to="/products/fasteners" className="underline hover:text-white">
+              stud bolts and nuts for flange joints
+            </Link>
+            . All supplied with{" "}
+            <Link to="/quality" className="underline hover:text-white">
+              MTC and PMI-verified forged flanges
+            </Link>
+            . All types, sizes (1/2" to 60") and pressure ratings (150# to 2500#).
           </p>
         </div>
       </div>
@@ -271,10 +287,10 @@ function FlangesPage() {
           <h2 className="mb-6 text-lg font-extrabold text-brand-deep">Related Products</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              ["Pipes & Tubes", "/products/pipes-tubes"],
-              ["Pipe Fittings", "/products/pipe-fittings"],
-              ["Valves", "/products/valves"],
-              ["Gaskets & Sealing", "/products/gaskets"],
+              ["carbon steel and stainless steel pipes", "/products/pipes-tubes"],
+              ["pipe fittings and olets", "/products/pipe-fittings"],
+              ["industrial valves and strainers", "/products/valves"],
+              ["spiral wound and RTJ gaskets", "/products/gaskets"],
             ].map(([n, h]) => (
               <Link
                 key={h}

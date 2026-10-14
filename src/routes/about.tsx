@@ -138,15 +138,21 @@ function AboutPage() {
                 <strong className="text-ink">Hiren Metal & Tools</strong>, a name trusted in the
                 piping industry since <strong className="text-ink">1990</strong>. Founded by the
                 visionary <strong className="text-ink">Shri Ramesh V. Shah</strong>, Hiren Metal &
-                Tools earned a reputation for quality, reliability, and excellence in manufacturing,
-                stocking, trading, and supplying piping and piping-related products across India.
+                Tools earned a reputation for excellence in{" "}
+                <Link to="/quality" className="text-brand font-semibold underline hover:text-brand-light">
+                  uncompromising quality assurance
+                </Link>{" "}
+                and reliability in manufacturing, stocking, trading, and supplying piping products across India.
               </p>
               <p>
                 Carrying forward this legacy,{" "}
                 <strong className="text-ink">Mr. Hiren R. Shah</strong> established Hiren Pipes &
                 Fittings with a renewed vision to serve industries with modern solutions, faster
-                deliveries, and an expanded product portfolio — while preserving the values of
-                trust, integrity and customer commitment inherited from Hiren Metal & Tools.
+                deliveries, and an expanded{" "}
+                <Link to="/products" className="text-brand font-semibold underline hover:text-brand-light">
+                  complete product portfolio
+                </Link>{" "}
+                — while preserving the values of trust, integrity and customer commitment inherited from Hiren Metal & Tools.
               </p>
               <p>
                 With over <strong className="text-ink">36 years of industry experience</strong>, we
