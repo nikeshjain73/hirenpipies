@@ -81,7 +81,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_URL = "https://hirenpipes.in";
+const SITE_URL = "https://www.hirenpipes.in";
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({

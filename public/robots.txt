@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://hirenpipes.in/sitemap.xml
+Sitemap: https://www.hirenpipes.in/sitemap.xml
