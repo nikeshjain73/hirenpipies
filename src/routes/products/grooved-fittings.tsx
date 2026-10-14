@@ -18,6 +18,37 @@ export const Route = createFileRoute("/products/grooved-fittings")({
       { property: "og:url", content: `${SITE_URL}/products/grooved-fittings` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/products/grooved-fittings` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Ductile Iron Grooved Fittings",
+          description,
+          brand: { "@type": "Brand", name: "Hiren Pipes & Fittings" },
+          manufacturer: { "@type": "Organization", name: "Hiren Pipes & Fittings", url: SITE_URL },
+          category: "Grooved Fittings",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "INR",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+            { "@type": "ListItem", position: 3, name: "Grooved Fittings", item: `${SITE_URL}/products/grooved-fittings` },
+          ],
+        }),
+      },
+    ],
   }),
   component: GroovedFittingsPage,
 });

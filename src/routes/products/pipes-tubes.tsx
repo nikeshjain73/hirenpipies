@@ -36,6 +36,18 @@ export const Route = createFileRoute("/products/pipes-tubes")({
           },
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+            { "@type": "ListItem", position: 3, name: "Pipes & Tubes", item: `${SITE_URL}/products/pipes-tubes` },
+          ],
+        }),
+      },
     ],
   }),
   component: PipesTubesPage,

@@ -17,6 +17,37 @@ export const Route = createFileRoute("/products/structural-steel")({
       { property: "og:url", content: `${SITE_URL}/products/structural-steel` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/products/structural-steel` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Structural Steel Products",
+          description,
+          brand: { "@type": "Brand", name: "Hiren Pipes & Fittings" },
+          manufacturer: { "@type": "Organization", name: "Hiren Pipes & Fittings", url: SITE_URL },
+          category: "Structural Steel",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "INR",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+            { "@type": "ListItem", position: 3, name: "Structural Steel", item: `${SITE_URL}/products/structural-steel` },
+          ],
+        }),
+      },
+    ],
   }),
   component: StructuralSteelPage,
 });

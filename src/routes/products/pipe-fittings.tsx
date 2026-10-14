@@ -17,6 +17,37 @@ export const Route = createFileRoute("/products/pipe-fittings")({
       { property: "og:url", content: `${SITE_URL}/products/pipe-fittings` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/products/pipe-fittings` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Industrial Pipe Fittings",
+          description,
+          brand: { "@type": "Brand", name: "Hiren Pipes & Fittings" },
+          manufacturer: { "@type": "Organization", name: "Hiren Pipes & Fittings", url: SITE_URL },
+          category: "Pipe Fittings",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "INR",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+            { "@type": "ListItem", position: 3, name: "Pipe Fittings", item: `${SITE_URL}/products/pipe-fittings` },
+          ],
+        }),
+      },
+    ],
   }),
   component: PipeFittingsPage,
 });
