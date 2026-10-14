@@ -64,6 +64,7 @@ const allProducts = [
       "IS:1239 Light/Medium/Heavy",
       "ASTM A106/A53, A335, A312",
     ],
+    anchorText: "carbon steel and stainless steel pipes",
   },
   {
     title: "Flanges",
@@ -76,6 +77,7 @@ const allProducts = [
       "150# to 2500# pressure class",
       "Carbon / Alloy / SS / Duplex",
     ],
+    anchorText: "forged flanges (ASME B16.5)",
   },
   {
     title: "Pipe Fittings",
@@ -84,6 +86,7 @@ const allProducts = [
     tag: "Buttweld / Forged / Olets",
     desc: "Elbows (45°/90°/180°), equal & reducing tees, concentric/eccentric reducers, end caps, stub ends, couplings, unions, bushings, plugs. Weldolet, Sockolet, Thredolet.",
     standards: ["ASME/ASTM A234 WPB/WPC", "ASME A182 F304/F316/F91", "MSS SP-97 Olets, ASME 16.11"],
+    anchorText: "pipe fittings and olets",
   },
   {
     title: "Valves",
@@ -96,6 +99,7 @@ const allProducts = [
       "Socket Weld / Forged ends",
       "Gear & Hand Wheel operated",
     ],
+    anchorText: "industrial valves and strainers",
   },
   {
     title: "Fasteners & Studs",
@@ -108,6 +112,7 @@ const allProducts = [
       "ASTM A194 Gr. 2H/7/8/8M",
       "Gr. 4.6 / 5.6 / 8.8 / 10.9 / 12.9",
     ],
+    anchorText: "stud bolts and nuts",
   },
   {
     title: "Gaskets & Sealing",
@@ -120,6 +125,7 @@ const allProducts = [
       "RF & FF type flanges",
       "PTFE / Graphite / Asbestos / Ceramic",
     ],
+    anchorText: "spiral wound and RTJ gaskets",
   },
   {
     title: "Grooved Fittings",
@@ -128,6 +134,7 @@ const allProducts = [
     tag: "FM & UL Approved · 300 PSI",
     desc: "Ductile iron grooved fittings — 90° elbows, reducing elbows, 45° elbows, tees, crosses, rigid & flexible couplings, mechanical tees & outlets, concentric & eccentric reducers, caps, flange adaptors and split flanges.",
     standards: ["ASTM A536 Grade 65-45-12", "FM & UL Approved", "Epoxy / Galvanized / Dacromet"],
+    anchorText: "grooved couplings and fittings",
   },
   {
     title: "HDGI Gratings",
@@ -136,6 +143,7 @@ const allProducts = [
     tag: "Hot Dip Galvanized",
     desc: "High quality Hot Dip Galvanized Iron (HDGI) gratings for industrial and construction applications. Walkways, platforms, drain covers, trench covers, industrial flooring, stair treads. Custom sizes available.",
     standards: ["Bearing Bar: 20mm–50mm", "Cross Bar: 6mm–12mm", "Hot Dip Galvanized finish"],
+    anchorText: "HDGI gratings",
   },
   {
     title: "Structural Steel",
@@ -144,6 +152,7 @@ const allProducts = [
     tag: "Complete Steel Solutions",
     desc: "MS Angle, Channel, I-Beam, H-Beam, Flat, Round, Square bars, Bright Bar, Wire Rod, GC Sheet, Profile Sheet, Deck Sheet, Scaffolding, Weld Mesh, Chainlink, Foundation Bolt, Crash Barrier and more.",
     standards: ["IS:2062 / ASTM A36", "30+ Product Types", "Galvanizing & Fabrication"],
+    anchorText: "structural steel sections",
   },
 ];
 
@@ -184,7 +193,7 @@ function ProductCard({ p }: { p: (typeof allProducts)[0] }) {
           to={p.href}
           className="mt-5 inline-flex items-center gap-2 bg-brand-deep px-4 py-2.5 text-xs font-bold uppercase text-primary-foreground hover:bg-brand transition-colors"
         >
-          Full specifications <ArrowRight size={14} />
+          {p.anchorText} <ArrowRight size={14} />
         </Link>
       </div>
     </article>
@@ -248,7 +257,7 @@ function ProductsPage() {
               to="/contact"
               className="inline-flex items-center justify-center gap-2 border border-brand-deep px-6 py-3 text-xs font-bold uppercase text-brand-deep hover:bg-brand-deep hover:text-primary-foreground"
             >
-              Email enquiry
+              Enquire about piping &amp; fittings
             </Link>
           </div>
         </div>

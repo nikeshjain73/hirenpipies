@@ -76,6 +76,7 @@ const productCards = [
     href: "/products/pipes-tubes",
     summary: "Carbon steel seamless, alloy, SS, GI, ERW and spiral-welded pipes across all grades.",
     standards: ["API 5L X42–X79", "IS:1239 / IS:3589", "SMLS / ERW / SAW"],
+    anchorText: "carbon steel and stainless steel pipes",
   },
   {
     title: "Forged Flanges",
@@ -84,6 +85,7 @@ const productCards = [
     href: "/products/flanges",
     summary: "Weld neck, slip-on, blind, socket weld, lap joint, RTJ, DIN and BS 10 flanges.",
     standards: ["WNRF / SORF / BLRF", "SWRF / LJ / RTJ", "DIN / BS 10"],
+    anchorText: "forged flanges (ASME B16.5)",
   },
   {
     title: "Pipe Fittings",
@@ -92,6 +94,7 @@ const productCards = [
     href: "/products/pipe-fittings",
     summary: "Elbows, tees, reducers, caps, stubs, unions, couplings, weldolets and sockolets.",
     standards: ["ASME A234 WPB", "ASME A182 F304/316", "MSS SP-97 Olets"],
+    anchorText: "pipe fittings and olets",
   },
 ];
 
@@ -100,31 +103,37 @@ const moreProducts = [
     name: "Valves & Strainers",
     href: "/products/valves",
     desc: "Gate, Globe, Ball, Butterfly, Check, Steam Trap, Strainers, Sight Glass.",
+    anchorText: "industrial valves and strainers",
   },
   {
     name: "Fasteners & Studs",
     href: "/products/fasteners",
     desc: "ASTM A193 B7/B8, A194 2H, SS 304/316, all grades and surface coatings.",
+    anchorText: "stud bolts and nuts",
   },
   {
     name: "Gaskets & Sealing",
     href: "/products/gaskets",
     desc: "Spiral wound, RTJ, Kammprofile, MIJ, PTFE, Graphite, Non-Asbestos sheets.",
+    anchorText: "spiral wound and RTJ gaskets",
   },
   {
     name: "Grooved Fittings",
     href: "/products/grooved-fittings",
     desc: "Ductile iron grooved elbows, tees, couplings, reducers. FM & UL approved, 300 PSI.",
+    anchorText: "grooved couplings and fittings",
   },
   {
     name: "HDGI Gratings",
     href: "/products/hdgi-gratings",
     desc: "Hot Dip Galvanized Iron gratings for walkways, platforms, drain covers. Custom sizes.",
+    anchorText: "HDGI gratings",
   },
   {
     name: "Structural Steel",
     href: "/products/structural-steel",
     desc: "Plates, bars, angles, channels, electroforged gratings, handrails, ladders.",
+    anchorText: "structural steel sections",
   },
 ];
 
@@ -359,7 +368,7 @@ function HomePage() {
                       to={p.href}
                       className="inline-flex items-center gap-1.5 text-xs font-bold uppercase text-brand-light hover:text-brand transition-colors"
                     >
-                      View details <ArrowRight size={13} />
+                      {p.anchorText} <ArrowRight size={13} />
                     </Link>
                   </div>
                 </div>
@@ -380,7 +389,7 @@ function HomePage() {
                 </h3>
                 <p className="mt-2 text-s leading-relaxed text-steel">{p.desc}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-[10px] font-bold uppercase text-brand-light">
-                  Learn more <ArrowRight size={10} />
+                  {p.anchorText} <ArrowRight size={10} />
                 </span>
               </Link>
             ))}
